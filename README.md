@@ -56,7 +56,7 @@ Danach im Browser öffnen:
 
 ### 3) Telefonnummern aktualisieren
 - Datei: `index.html`
-- Suchen nach: `+41 XX XXX XX XX` und `tel:+41XXXXXXXXX`
+- Suchen nach: `+41 XX XXX XX XX` und `tel:+41000000000`
 - Betroffene Stellen:
   - Header-Notfallbutton
   - Hero-Sekundär-CTA
