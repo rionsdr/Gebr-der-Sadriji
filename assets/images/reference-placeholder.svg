@@ -1,0 +1,9 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="imgTitle imgDesc">
+  <title id="imgTitle">Referenzbild-Platzhalter</title>
+  <desc id="imgDesc">Platzhalter für zukünftige Projektfotos</desc>
+  <rect width="800" height="600" fill="#DDE6EF"/>
+  <rect x="120" y="140" width="560" height="320" rx="24" fill="#B9C9D9"/>
+  <path d="M190 390L290 290L380 360L490 250L610 390H190Z" fill="#8EA5BA"/>
+  <circle cx="560" cy="220" r="42" fill="#F3F7FB"/>
+  <text x="400" y="520" text-anchor="middle" fill="#35506A" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">Referenzbild Platzhalter</text>
+</svg>
