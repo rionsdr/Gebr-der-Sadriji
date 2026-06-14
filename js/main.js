@@ -18,11 +18,23 @@
   const desktopNavMedia = window.matchMedia('(min-width: 48rem)');
 
   if (navToggle && mainNav) {
+    const syncNavHeight = () => {
+      if (desktopNavMedia.matches) {
+        mainNav.style.maxHeight = '';
+        return;
+      }
+
+      mainNav.style.maxHeight = mainNav.classList.contains('open')
+        ? `${mainNav.scrollHeight}px`
+        : '0px';
+    };
+
     const closeNav = () => {
       mainNav.classList.remove('open');
       mainNav.setAttribute('aria-hidden', desktopNavMedia.matches ? 'false' : 'true');
       navToggle.setAttribute('aria-expanded', 'false');
       navToggle.setAttribute('aria-label', 'Menü öffnen');
+      syncNavHeight();
     };
 
     const openNav = () => {
@@ -30,6 +42,7 @@
       mainNav.setAttribute('aria-hidden', 'false');
       navToggle.setAttribute('aria-expanded', 'true');
       navToggle.setAttribute('aria-label', 'Menü schliessen');
+      syncNavHeight();
     };
 
     const toggleNav = () => {
@@ -42,6 +55,7 @@
     };
 
     closeNav();
+    syncNavHeight();
 
     navToggle.addEventListener('click', (event) => {
       event.stopPropagation();
@@ -74,12 +88,15 @@
     // Menüzustand beim Breakpoint-Wechsel konsistent halten
     const handleDesktopChange = () => {
       closeNav();
+      syncNavHeight();
     };
     if (typeof desktopNavMedia.addEventListener === 'function') {
       desktopNavMedia.addEventListener('change', handleDesktopChange);
     } else {
       desktopNavMedia.addListener(handleDesktopChange);
     }
+
+    window.addEventListener('resize', syncNavHeight, { passive: true });
   }
 
   /* ================================================================
@@ -135,7 +152,9 @@
 
       event.preventDefault();
 
-      const isTopAnchor = targetId === '#top';
+      const isTopAnchor =
+        targetId === '#top' ||
+        (anchor.classList.contains('logo') && targetId === '#start');
       const headerHeight = siteHeader ? siteHeader.offsetHeight : 0;
       const targetPosition = isTopAnchor
         ? 0
@@ -249,6 +268,9 @@
 
   if (form && feedback) {
     const requiredFields = Array.from(form.querySelectorAll('[required]'));
+    const submitButton = form.querySelector('button[type="submit"]');
+    const submitButtonLabel = submitButton?.querySelector('.btn-label');
+    const defaultSubmitLabel = submitButtonLabel?.textContent || 'Anfrage senden';
 
     const normalizeSingleLine = (value) =>
       String(value ?? '')
@@ -268,6 +290,28 @@
       field.classList.remove('is-invalid');
     };
 
+    const setFeedback = (message, type = '') => {
+      feedback.textContent = message;
+      feedback.classList.remove('is-success', 'is-error');
+
+      if (type) {
+        feedback.classList.add(type === 'success' ? 'is-success' : 'is-error');
+      }
+    };
+
+    const setSubmittingState = (isSubmitting) => {
+      form.setAttribute('aria-busy', String(isSubmitting));
+
+      if (!submitButton) return;
+
+      submitButton.disabled = isSubmitting;
+      submitButton.setAttribute('aria-disabled', String(isSubmitting));
+
+      if (submitButtonLabel) {
+        submitButtonLabel.textContent = isSubmitting ? 'Wird gesendet …' : defaultSubmitLabel;
+      }
+    };
+
     requiredFields.forEach((field) => {
       field.addEventListener('input', () => {
         if (field.checkValidity()) {
@@ -278,7 +322,7 @@
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      feedback.textContent = '';
+      setFeedback('');
 
       let formIsValid = true;
       requiredFields.forEach((field) => {
@@ -291,7 +335,7 @@
       });
 
       if (!formIsValid) {
-        feedback.textContent = 'Bitte füllen Sie alle Pflichtfelder korrekt aus.';
+        setFeedback('Bitte füllen Sie alle Pflichtfelder korrekt aus.', 'error');
         // Fokus auf erstes fehlerhaftes Feld setzen
         const firstInvalid = form.querySelector('.is-invalid');
         if (firstInvalid) firstInvalid.focus();
@@ -317,14 +361,17 @@
           body:    bodyRaw,
         });
         window.location.href = `mailto:${managerEmailPlaceholder}?${params.toString()}`;
-        feedback.textContent =
-          'Ihr Mailprogramm wurde geöffnet. Bitte Nachricht senden, um die Anfrage abzuschliessen.';
+        setFeedback(
+          'Ihr Mailprogramm wurde geöffnet. Bitte Nachricht senden, um die Anfrage abzuschliessen.'
+        );
         form.reset();
         return;
       }
 
       // Echtbetrieb: Daten per fetch an das Backend senden
       try {
+        setSubmittingState(true);
+
         const response = await fetch(endpoint, {
           method:  'POST',
           body:    formData,
@@ -332,14 +379,41 @@
         });
 
         if (!response.ok) {
-          throw new Error('Anfrage konnte nicht gesendet werden');
+          let errorMessage =
+            'Ihre Anfrage konnte nicht übermittelt werden. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns telefonisch unter +41 76 462 50 38.';
+
+          try {
+            const data = await response.json();
+            const formspreeErrors = Array.isArray(data?.errors)
+              ? data.errors
+                  .map((entry) => entry?.message)
+                  .filter(Boolean)
+              : [];
+
+            if (formspreeErrors.length) {
+              errorMessage = `${formspreeErrors.join('. ')}. Alternativ erreichen Sie uns telefonisch unter +41 76 462 50 38.`;
+            }
+          } catch (_parseError) {
+            // Defensive Fehlerbehandlung: ungültige oder leere JSON-Antwort ignorieren
+          }
+
+          throw new Error(errorMessage);
         }
 
-        feedback.textContent = 'Vielen Dank. Ihre Anfrage wurde erfolgreich übermittelt.';
+        setFeedback(
+          'Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt. Wir melden uns zeitnah bei Ihnen.',
+          'success'
+        );
         form.reset();
-      } catch (_error) {
-        feedback.textContent =
-          'Senden aktuell nicht möglich. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt telefonisch über die Notfallnummer.';
+      } catch (error) {
+        setFeedback(
+          error instanceof Error
+            ? error.message
+            : 'Senden aktuell nicht möglich. Bitte kontaktieren Sie uns alternativ telefonisch unter +41 76 462 50 38.',
+          'error'
+        );
+      } finally {
+        setSubmittingState(false);
       }
     });
   }

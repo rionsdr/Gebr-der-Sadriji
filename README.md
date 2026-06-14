@@ -106,15 +106,16 @@ python3 -m http.server 8000
 - Platzhaltertexte durch echte Kundenbewertungen ersetzen
 - Markierung: Kommentar `<!-- PLATZHALTER-TESTIMONIALS -->`
 
-### 8) Anfrageformular (E-Mail an Manager) aktivieren
+### 8) Anfrageformular (E-Mail an Manager)
 - **Datei:** `index.html` (Formular `#anfrageformular`)
-- **Schritt 1:** Bei [formspree.io](https://formspree.io) kostenlos registrieren und neues Formular erstellen
-- **Schritt 2:** Endpoint `https://formspree.io/f/XXXXXX` im `action`-Attribut eintragen (statt `FORM_ID_PLATZHALTER`)
-- **Schritt 3:** Empfängeradresse des Managers im Formspree-Dashboard hinterlegen
-- Versand erfolgt dann per `fetch` im Hintergrund (kein Mailprogramm beim Besucher)
-- Solange `FORM_ID_PLATZHALTER` gesetzt ist, greift automatisch der `mailto:`-Fallback
-- Die Fallback-Empfängeradresse steht in `js/main.js` als `managerEmailPlaceholder` und ist aktuell ein Platzhalter
-  (`kontakt@gebrueder-sadriji.ch`) – für den Produktivbetrieb auf die echte Manager-E-Mail anpassen
+- Bereits aktiv mit dem echten Formspree-Endpoint: **`https://formspree.io/f/xpqekneb`**
+- Die Website nutzt den vorhandenen **Vanilla-JS-AJAX-Flow** (`fetch` + `Accept: application/json`) – **keine zusätzliche Formspree-Bibliothek nötig**
+- Nach erfolgreichem Versand sieht der Besucher nur die Bestätigung im Formular; **es öffnet sich kein Mailprogramm**
+- Die **Empfänger-E-Mail des Managers wird nicht im Code**, sondern im **Formspree-Dashboard** für das Formular **`xpqekneb`** hinterlegt bzw. geändert – dorthin gehen alle Anfragen automatisch per E-Mail
+- Das versteckte Feld `_subject` setzt den Mail-Betreff auf `Neue Anfrage über die Website Gebrüder Sadriji`
+- Ein Honeypot-Feld (`_gotcha`) ist als einfacher Spam-Schutz ergänzt
+- Falls künftig wieder ein Platzhalter-Endpoint wie `FORM_ID_PLATZHALTER` eingetragen wird, greift automatisch der bestehende `mailto:`-Fallback in `js/main.js`
+- Die dort verwendete Fallback-Adresse **`kontakt@gebrueder-sadriji.ch`** bleibt bewusst ein kommentierter Platzhalter und ist im Normalbetrieb mit Formspree **inaktiv**
 
 ### 9) Kennzahl «350+ Projekte» verifizieren
 - **Datei:** `index.html`, Sektion `#ueber-uns`
@@ -123,6 +124,7 @@ python3 -m http.server 8000
 ### 10) Aktuelle Inhaltsstände
 - Mitarbeitende: **19** (Hero + Über-uns-Statistik)
 - Leistungen erweitert um: **Umbau, Trockenbau, Nassbau**
+- Telefonnummer überall gesetzt auf: **`+41 76 462 50 38`** (`tel:+41764625038`)
 - Anfrage-CTAs im UI vereinheitlicht auf: **«Kostenlose Anfrage»**
 
 ---
