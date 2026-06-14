@@ -33,6 +33,14 @@
   // Kontaktformular validieren und absenden
   if (form && feedback) {
     const requiredFields = Array.from(form.querySelectorAll('[required]'));
+    const normalizeSingleLine = (value) =>
+      String(value ?? '')
+        .replace(/[\r\n]+/g, ' ')
+        .trim();
+    const normalizeMultiLine = (value) =>
+      String(value ?? '')
+        .replace(/\u0000/g, '')
+        .trim();
 
     const setInvalidState = (field) => {
       field.classList.add('is-invalid');
@@ -75,11 +83,11 @@
 
       if (hasPlaceholderEndpoint) {
         // MAILTO-FALLBACK solange kein Formular-Backend angebunden ist
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const phone = formData.get('telefon');
-        const message = formData.get('nachricht');
-        const subjectRaw = formData.get('betreff') || 'Neue Anfrage';
+        const name = normalizeSingleLine(formData.get('name'));
+        const email = normalizeSingleLine(formData.get('email'));
+        const phone = normalizeSingleLine(formData.get('telefon'));
+        const message = normalizeMultiLine(formData.get('nachricht'));
+        const subjectRaw = normalizeSingleLine(formData.get('betreff')) || 'Neue Anfrage';
         const subject = encodeURIComponent(`Anfrage: ${subjectRaw}`);
         const bodyRaw = `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\n\nNachricht:\n${message}`;
         const body = encodeURIComponent(bodyRaw);
