@@ -29,7 +29,7 @@ Für den Erstaufbau wurde bewusst eine **Single-Page mit klaren Sektionen und An
 Da es eine statische Website ohne Build-Tools ist, genügt ein lokaler Webserver:
 
 ```bash
-cd /home/runner/work/Gebr-der-Sadriji/Gebr-der-Sadriji/officialwealthx/Gebr-der-Sadriji
+cd Gebr-der-Sadriji
 python3 -m http.server 8000
 ```
 

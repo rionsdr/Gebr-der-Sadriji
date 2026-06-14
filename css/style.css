@@ -387,6 +387,10 @@ a {
   color: #fff;
 }
 
+.placeholder-link {
+  color: #9eb1c6;
+}
+
 .footer-bottom {
   margin-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);

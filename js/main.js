@@ -75,12 +75,14 @@
 
       if (hasPlaceholderEndpoint) {
         // MAILTO-FALLBACK solange kein Formular-Backend angebunden ist
-        const subject = encodeURIComponent(`Anfrage: ${formData.get('betreff') || 'Neue Anfrage'}`);
-        const body = encodeURIComponent(
-          `Name: ${formData.get('name')}\nE-Mail: ${formData.get('email')}\nTelefon: ${formData.get(
-            'telefon'
-          )}\n\nNachricht:\n${formData.get('nachricht')}`
-        );
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const phone = formData.get('telefon');
+        const message = formData.get('nachricht');
+        const subjectRaw = formData.get('betreff') || 'Neue Anfrage';
+        const subject = encodeURIComponent(`Anfrage: ${subjectRaw}`);
+        const bodyRaw = `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\n\nNachricht:\n${message}`;
+        const body = encodeURIComponent(bodyRaw);
         window.location.href = `mailto:kontakt@gebrueder-sadriji.ch?subject=${subject}&body=${body}`;
         feedback.textContent =
           'Ihr Mailprogramm wurde geöffnet. Bitte Nachricht senden, um die Anfrage abzuschliessen.';
