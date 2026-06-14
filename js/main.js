@@ -88,10 +88,12 @@
         const phone = normalizeSingleLine(formData.get('telefon'));
         const message = normalizeMultiLine(formData.get('nachricht'));
         const subjectRaw = normalizeSingleLine(formData.get('betreff')) || 'Neue Anfrage';
-        const subject = encodeURIComponent(`Anfrage: ${subjectRaw}`);
         const bodyRaw = `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\n\nNachricht:\n${message}`;
-        const body = encodeURIComponent(bodyRaw);
-        window.location.href = `mailto:kontakt@gebrueder-sadriji.ch?subject=${subject}&body=${body}`;
+        const params = new URLSearchParams({
+          subject: `Anfrage: ${subjectRaw}`,
+          body: bodyRaw,
+        });
+        window.location.href = `mailto:kontakt@gebrueder-sadriji.ch?${params.toString()}`;
         feedback.textContent =
           'Ihr Mailprogramm wurde geöffnet. Bitte Nachricht senden, um die Anfrage abzuschliessen.';
         form.reset();
@@ -113,7 +115,7 @@
         form.reset();
       } catch (error) {
         feedback.textContent =
-          'Senden aktuell nicht möglich. Bitte kontaktieren Sie uns direkt telefonisch über die Notfallnummer.';
+          'Senden aktuell nicht möglich. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt telefonisch über die Notfallnummer.';
       }
     });
   }
