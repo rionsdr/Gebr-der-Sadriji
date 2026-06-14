@@ -29,7 +29,7 @@ Für den Erstaufbau wurde bewusst eine **Single-Page mit klaren Sektionen und An
 Da es eine statische Website ohne Build-Tools ist, genügt ein lokaler Webserver:
 
 ```bash
-cd Gebr-der-Sadriji
+cd <repository-ordner>
 python3 -m http.server 8000
 ```
 
