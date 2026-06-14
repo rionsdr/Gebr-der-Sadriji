@@ -391,7 +391,7 @@
               : [];
 
             if (formspreeErrors.length) {
-              errorMessage = `${formspreeErrors.join(' ')} Alternativ erreichen Sie uns telefonisch unter +41 76 462 50 38.`;
+              errorMessage = `${formspreeErrors.join('. ')}. Alternativ erreichen Sie uns telefonisch unter +41 76 462 50 38.`;
             }
           } catch (_parseError) {
             // Defensive Fehlerbehandlung: ungültige oder leere JSON-Antwort ignorieren
