@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Gebrüder Sadriji aus Zürich: Maler- und Gipserarbeiten in Schweizer Qualität. Jetzt schnell und unkompliziert Anfrage stellen."
+      content="Gebrüder Sadriji aus Zürich: Maler- und Gipserarbeiten in Schweizer Qualität. 40+ Jahre Erfahrung. Jetzt schnell und unkompliziert Anfrage stellen oder 24/7 Notfall anrufen."
     />
     <title>Gebrüder Sadriji | Maler- &amp; Gipserarbeiten in Zürich</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Barrierefreiheit: Sprunglink zum Hauptinhalt -->
     <a class="skip-link" href="#hauptinhalt">Zum Hauptinhalt springen</a>
 
+    <!-- Scroll-Fortschrittsbalken -->
+    <div class="scroll-progress" id="scrollProgress" role="progressbar" aria-hidden="true"></div>
+
+    <!-- ================================================================
+         HEADER / NAVIGATION
+    ================================================================ -->
     <header class="site-header" id="top">
       <div class="container header-inner">
+        <!-- PLATZHALTER-LOGO: assets/logo-placeholder.svg durch finales Firmenlogo ersetzen -->
         <a class="logo" href="#top" aria-label="Startseite Gebrüder Sadriji">
-          <!-- PLATZHALTER-LOGO: Diese SVG-Datei später durch das finale Firmenlogo ersetzen -->
-          <img src="assets/logo-placeholder.svg" alt="Logo-Platzhalter Gebrüder Sadriji" />
+          <img src="assets/logo-placeholder.svg" alt="Logo-Platzhalter Gebrüder Sadriji" width="180" height="48" />
         </a>
 
         <button
@@ -27,9 +34,9 @@
           aria-label="Menü öffnen"
           type="button"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
         </button>
 
         <nav id="hauptnavigation" class="main-nav" aria-label="Hauptnavigation">
@@ -37,82 +44,250 @@
             <li><a href="#start">Start</a></li>
             <li><a href="#ueber-uns">Über uns</a></li>
             <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#ablauf">Ablauf</a></li>
             <li><a href="#referenzen">Referenzen</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
           </ul>
         </nav>
 
-        <a class="header-emergency" href="tel:+41000000000">
-          24/7 Notfall: +41 XX XXX XX XX
+        <!-- PLATZHALTER-TELEFON: +41 XX XXX XX XX und tel:+41000000000 durch echte Nummer ersetzen -->
+        <a class="header-emergency" href="tel:+41000000000" aria-label="24/7 Notfall anrufen">
+          <!-- Telefon-Icon -->
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47a2 2 0 0 1 1.98-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l1.3-1.3a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <span>24/7 Notfall</span>
         </a>
       </div>
     </header>
 
     <main id="hauptinhalt">
+
+      <!-- ================================================================
+           HERO
+      ================================================================ -->
       <section id="start" class="hero section">
-        <div class="container hero-grid">
+        <!-- PLATZHALTER-HERO-BILD: .hero-bg später mit echtem Hintergrundfoto belegen
+             (CSS-Kommentar: background-image: url('assets/images/hero.jpg') in .hero-bg setzen) -->
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="container hero-grid reveal">
           <div class="hero-content">
             <p class="eyebrow">Maler- &amp; Gipserarbeiten · Zürich</p>
-            <h1>Schweizer Qualität für Neubau, Renovation und Unterhalt</h1>
-            <p>
-              Gebrüder Sadriji begleitet private und gewerbliche Projekte mit präziser Handwerksarbeit,
-              verlässlicher Kommunikation und termingerechter Ausführung.
+            <h1>Schweizer Qualität für<br>Neubau, Renovation<br>und Unterhalt</h1>
+            <p class="hero-sub">
+              Gebrüder Sadriji begleitet private und gewerbliche Projekte mit präziser
+              Handwerksarbeit, verlässlicher Kommunikation und termingerechter Ausführung.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#kontakt">Jetzt Anfrage stellen</a>
-              <a class="btn btn-secondary" href="tel:+41000000000" aria-label="24/7 Notfallnummer anrufen">
+              <a class="btn btn-primary" href="#kontakt">
+                <!-- Pfeil-rechts-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+                Jetzt Anfrage stellen
+              </a>
+              <!-- PLATZHALTER-TELEFON: href und sichtbaren Text anpassen -->
+              <a class="btn btn-hero-emergency" href="tel:+41000000000" aria-label="24/7 Notfallnummer anrufen">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47a2 2 0 0 1 1.98-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l1.3-1.3a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
                 24/7-Notfall anrufen
               </a>
             </div>
           </div>
+
+          <!-- Kurzprofil-Karte -->
           <div class="hero-card" aria-label="Kurzprofil Gebrüder Sadriji">
-            <h2>Gebrüder Sadriji</h2>
-            <ul>
-              <li>19 Jahre Firmenbestehen</li>
-              <li>Über 40 Jahre Erfahrung</li>
-              <li>8 Mitarbeitende</li>
-              <li>UID: CHE-113.308.264</li>
+            <p class="hero-card-label">Ihr Betrieb auf einen Blick</p>
+            <ul class="hero-card-list">
+              <li>
+                <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                19 Jahre Firmenbestehen
+              </li>
+              <li>
+                <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Über 40 Jahre Erfahrung
+              </li>
+              <li>
+                <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                8 Mitarbeitende
+              </li>
+              <li>
+                <svg class="icon icon-check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                UID: CHE-113.308.264
+              </li>
             </ul>
           </div>
         </div>
       </section>
 
+      <!-- ================================================================
+           TRUST-STRIP (direkt unter Hero)
+      ================================================================ -->
+      <div class="trust-strip" aria-label="Vertrauensmerkmale">
+        <div class="container trust-strip-inner">
+          <div class="trust-badge reveal">
+            <!-- Award-Icon -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="8" r="6"></circle>
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+            </svg>
+            <span>Über 40 Jahre Erfahrung</span>
+          </div>
+          <div class="trust-badge reveal" style="--reveal-delay: 0.1s">
+            <!-- Schweizer Kreuz / Schild-Icon -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Schweizer Qualität</span>
+          </div>
+          <div class="trust-badge reveal" style="--reveal-delay: 0.2s">
+            <!-- Kalender-Check-Icon -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <polyline points="9 16 11 18 15 14"></polyline>
+            </svg>
+            <span>Termingerecht &amp; sauber</span>
+          </div>
+          <div class="trust-badge reveal" style="--reveal-delay: 0.3s">
+            <!-- Notfall-Telefon-Icon -->
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47a2 2 0 0 1 1.98-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l1.3-1.3a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            <span>24/7 Notfalldienst</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================================================================
+           ÜBER UNS / KENNZAHLEN
+      ================================================================ -->
       <section id="ueber-uns" class="section">
         <div class="container">
-          <h2>Über uns</h2>
-          <p class="section-intro">
-            Seit 19 Jahren steht Gebrüder Sadriji in Zürich für hochwertige Maler- und Gipserarbeiten. Mit
-            über 40 Jahren Erfahrung im Team setzen wir Projekte sauber, effizient und in Schweizer Qualität
-            um.
+          <p class="section-tag reveal">Über uns</p>
+          <h2 class="reveal">Seit 19 Jahren Ihr verlässlicher<br>Partner in Zürich</h2>
+          <p class="section-intro reveal">
+            Gebrüder Sadriji steht in Zürich für hochwertige Maler- und Gipserarbeiten. Mit
+            über 40 Jahren Erfahrung im Team setzen wir Projekte sauber, effizient und in
+            Schweizer Qualität um – von der Erstberatung bis zur Endabnahme.
           </p>
           <div class="stats-grid" role="list" aria-label="Kennzahlen">
-            <article class="stat-card" role="listitem">
-              <p class="stat-value">40+</p>
+            <article class="stat-card reveal" role="listitem" style="--reveal-delay: 0s">
+              <!-- Kennzahl: Zähler-Animation wird via JS (count-up) gesteuert -->
+              <p class="stat-value" data-count="40" data-suffix="+">40+</p>
               <p class="stat-label">Jahre Erfahrung</p>
             </article>
-            <article class="stat-card" role="listitem">
-              <p class="stat-value">19</p>
+            <article class="stat-card reveal" role="listitem" style="--reveal-delay: 0.1s">
+              <p class="stat-value" data-count="19" data-suffix="">19</p>
               <p class="stat-label">Jahre Firmenbestehen</p>
             </article>
-            <article class="stat-card" role="listitem">
-              <p class="stat-value">8</p>
+            <article class="stat-card reveal" role="listitem" style="--reveal-delay: 0.2s">
+              <p class="stat-value" data-count="8" data-suffix="">8</p>
               <p class="stat-label">Mitarbeitende</p>
             </article>
-            <article class="stat-card" role="listitem">
-              <p class="stat-value">350+</p>
-              <p class="stat-label">Abgeschlossene Projekte (Platzhalter)</p>
+            <article class="stat-card reveal" role="listitem" style="--reveal-delay: 0.3s">
+              <!-- PLATZHALTER-KENNZAHL: 350+ abgeschlossene Projekte – bitte verifizieren -->
+              <p class="stat-value" data-count="350" data-suffix="+">350+</p>
+              <p class="stat-label">Projekte (Platzhalter)</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="leistungen" class="section section-alt">
+      <!-- ================================================================
+           WARUM GEBRÜDER SADRIJI (USP-Sektion)
+      ================================================================ -->
+      <section id="warum-wir" class="section section-dark">
         <div class="container">
-          <h2>Leistungen</h2>
-          <p class="section-intro">Individuelle Lösungen für Wohn-, Gewerbe- und Umbauprojekte.</p>
+          <p class="section-tag section-tag-light reveal">Unsere Stärken</p>
+          <h2 class="reveal text-light">Warum Gebrüder Sadriji?</h2>
+          <p class="section-intro section-intro-light reveal">
+            Was uns von anderen Betrieben unterscheidet – und warum Kunden seit Jahren auf uns zählen.
+          </p>
+          <div class="usp-grid">
+            <article class="usp-card reveal" style="--reveal-delay: 0s">
+              <div class="usp-icon-wrap" aria-hidden="true">
+                <!-- Award/Erfahrung-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="8" r="6"></circle>
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
+                </svg>
+              </div>
+              <h3>40+ Jahre Erfahrung</h3>
+              <p>Unser Team bringt über 40 Jahre kumuliertes Fachwissen in Maler- und Gipserarbeiten mit – für jedes Projekt die optimale Lösung.</p>
+            </article>
+            <article class="usp-card reveal" style="--reveal-delay: 0.1s">
+              <div class="usp-icon-wrap" aria-hidden="true">
+                <!-- Schild/Qualität-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <polyline points="9 12 11 14 15 10"></polyline>
+                </svg>
+              </div>
+              <h3>Schweizer Qualität</h3>
+              <p>Wir arbeiten ausschliesslich mit hochwertigen Materialien und nach Schweizer Standards – sichtbar in jedem Pinselstrich und jeder Oberfläche.</p>
+            </article>
+            <article class="usp-card reveal" style="--reveal-delay: 0.2s">
+              <div class="usp-icon-wrap" aria-hidden="true">
+                <!-- Uhr/Termintreue-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <h3>Zuverlässig &amp; termingerecht</h3>
+              <p>Klare Absprachen, pünktliche Ausführung und transparente Kommunikation vom ersten Kontakt bis zur Übergabe.</p>
+            </article>
+            <article class="usp-card reveal" style="--reveal-delay: 0.3s">
+              <div class="usp-icon-wrap" aria-hidden="true">
+                <!-- Personen/Service-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <h3>Persönlicher Service</h3>
+              <p>Familienbetrieb mit direktem Kontakt – kein Callcenter, kein Weitervermitteln. Sie sprechen immer mit den Menschen, die Ihre Arbeit ausführen.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           LEISTUNGEN
+      ================================================================ -->
+      <section id="leistungen" class="section">
+        <div class="container">
+          <p class="section-tag reveal">Was wir anbieten</p>
+          <h2 class="reveal">Unsere Leistungen</h2>
+          <p class="section-intro reveal">Individuelle Lösungen für Wohn-, Gewerbe- und Umbauprojekte in Zürich und Umgebung.</p>
 
           <div class="service-grid">
-            <article class="service-card">
+            <article class="service-card reveal" style="--reveal-delay: 0s">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <!-- Pinsel/Malerarbeiten-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M18.37 2.63 14 7l-1.59-1.59a2 2 0 0 0-2.82 0L8 7l9 9 1.59-1.59a2 2 0 0 0 0-2.82L17 10l4.37-4.37a2.12 2.12 0 1 0-3-3z"></path>
+                  <path d="M9 8c-2 3-4 3.5-7 4l8 10c2-1 6-5 6-7"></path>
+                  <path d="M14.5 17.5 4.5 15"></path>
+                </svg>
+              </div>
               <h3>Malerarbeiten</h3>
               <ul>
                 <li>Innenanstriche für Wohn- und Geschäftsflächen</li>
@@ -121,7 +296,15 @@
                 <li>Renovationsanstriche bei Sanierungen</li>
               </ul>
             </article>
-            <article class="service-card">
+            <article class="service-card reveal" style="--reveal-delay: 0.1s">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <!-- Schichten/Gipser-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
               <h3>Gipserarbeiten</h3>
               <ul>
                 <li>Verputzarbeiten im Innen- und Aussenbereich</li>
@@ -130,7 +313,13 @@
                 <li>Reparatur und Instandsetzung bestehender Flächen</li>
               </ul>
             </article>
-            <article class="service-card">
+            <article class="service-card reveal" style="--reveal-delay: 0.2s">
+              <div class="service-icon-wrap" aria-hidden="true">
+                <!-- Werkzeug/Renovation-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                </svg>
+              </div>
               <h3>Renovation &amp; Unterhalt</h3>
               <ul>
                 <li>Koordinierte Renovationspakete aus einer Hand</li>
@@ -143,123 +332,355 @@
         </div>
       </section>
 
+      <!-- ================================================================
+           ABLAUF / „SO ARBEITEN WIR"
+      ================================================================ -->
+      <section id="ablauf" class="section section-alt">
+        <div class="container">
+          <p class="section-tag reveal">Unser Vorgehen</p>
+          <h2 class="reveal">So arbeiten wir</h2>
+          <p class="section-intro reveal">Von der ersten Kontaktaufnahme bis zur sauberen Übergabe – transparent und verlässlich in vier Schritten.</p>
+
+          <div class="steps-grid">
+            <article class="step-card reveal" style="--reveal-delay: 0s">
+              <div class="step-number" aria-hidden="true">01</div>
+              <div class="step-icon-wrap" aria-hidden="true">
+                <!-- Nachricht/Anfrage-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <h3>Anfrage</h3>
+              <p>Sie kontaktieren uns per Formular, Telefon oder E-Mail. Wir melden uns innert 24 Stunden zurück.</p>
+            </article>
+            <article class="step-card reveal" style="--reveal-delay: 0.1s">
+              <div class="step-number" aria-hidden="true">02</div>
+              <div class="step-icon-wrap" aria-hidden="true">
+                <!-- Clipboard/Offerte-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                  <line x1="9" y1="12" x2="15" y2="12"></line>
+                  <line x1="9" y1="16" x2="13" y2="16"></line>
+                </svg>
+              </div>
+              <h3>Beratung &amp; Offerte</h3>
+              <p>Wir besichtigen das Objekt, beraten Sie und erstellen eine transparente, verbindliche Offerte.</p>
+            </article>
+            <article class="step-card reveal" style="--reveal-delay: 0.2s">
+              <div class="step-number" aria-hidden="true">03</div>
+              <div class="step-icon-wrap" aria-hidden="true">
+                <!-- Helm/Ausführung-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"></path>
+                  <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"></path>
+                  <path d="M4 15a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6"></path>
+                </svg>
+              </div>
+              <h3>Ausführung</h3>
+              <p>Unser erfahrenes Team führt die Arbeiten termingerecht, sauber und mit höchster Sorgfalt aus.</p>
+            </article>
+            <article class="step-card reveal" style="--reveal-delay: 0.3s">
+              <div class="step-number" aria-hidden="true">04</div>
+              <div class="step-icon-wrap" aria-hidden="true">
+                <!-- Check-Kreis/Abnahme-Icon -->
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h3>Abnahme</h3>
+              <p>Gemeinsame Abnahme, Qualitätskontrolle und saubere Übergabe – erst wenn Sie vollständig zufrieden sind.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           REFERENZEN / GALERIE
+      ================================================================ -->
       <section id="referenzen" class="section">
         <div class="container">
-          <h2>Referenzen</h2>
-          <p class="section-intro">
+          <p class="section-tag reveal">Unsere Arbeiten</p>
+          <h2 class="reveal">Referenzen</h2>
+          <p class="section-intro reveal">
             Einblick in ausgewählte Arbeiten. Bis zum finalen Bildmaterial werden Platzhalter verwendet.
+            <!-- PLATZHALTER-BILDER: assets/images/reference-placeholder.svg durch echte Projektfotos ersetzen -->
           </p>
           <div class="gallery-grid">
-            <figure class="gallery-item">
-              <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 1" />
+            <figure class="gallery-item reveal" style="--reveal-delay: 0s">
+              <div class="gallery-img-wrap">
+                <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 1" loading="lazy" />
+              </div>
               <figcaption>Referenzprojekt 1 (Platzhalter)</figcaption>
             </figure>
-            <figure class="gallery-item">
-              <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 2" />
+            <figure class="gallery-item reveal" style="--reveal-delay: 0.05s">
+              <div class="gallery-img-wrap">
+                <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 2" loading="lazy" />
+              </div>
               <figcaption>Referenzprojekt 2 (Platzhalter)</figcaption>
             </figure>
-            <figure class="gallery-item">
-              <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 3" />
+            <figure class="gallery-item reveal" style="--reveal-delay: 0.1s">
+              <div class="gallery-img-wrap">
+                <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 3" loading="lazy" />
+              </div>
               <figcaption>Referenzprojekt 3 (Platzhalter)</figcaption>
             </figure>
-            <figure class="gallery-item">
-              <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 4" />
+            <figure class="gallery-item reveal" style="--reveal-delay: 0.15s">
+              <div class="gallery-img-wrap">
+                <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 4" loading="lazy" />
+              </div>
               <figcaption>Referenzprojekt 4 (Platzhalter)</figcaption>
             </figure>
-            <figure class="gallery-item">
-              <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 5" />
+            <figure class="gallery-item reveal" style="--reveal-delay: 0.2s">
+              <div class="gallery-img-wrap">
+                <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 5" loading="lazy" />
+              </div>
               <figcaption>Referenzprojekt 5 (Platzhalter)</figcaption>
             </figure>
-            <figure class="gallery-item">
-              <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 6" />
+            <figure class="gallery-item reveal" style="--reveal-delay: 0.25s">
+              <div class="gallery-img-wrap">
+                <img src="assets/images/reference-placeholder.svg" alt="Platzhalterbild Referenzprojekt 6" loading="lazy" />
+              </div>
               <figcaption>Referenzprojekt 6 (Platzhalter)</figcaption>
             </figure>
           </div>
         </div>
       </section>
 
-      <section id="kontakt" class="section section-alt">
-        <div class="container contact-grid">
-          <div>
-            <h2>Kontakt &amp; Schnellanfrage</h2>
-            <p class="section-intro">
-              Senden Sie uns Ihre Anfrage – wir melden uns zeitnah mit einer passenden Lösung.
-            </p>
-
-            <form
-              id="anfrageformular"
-              class="contact-form"
-              action="https://formspree.io/f/FORM_ID_PLATZHALTER"
-              method="post"
-              novalidate
-            >
-              <!--
-                BACKEND-HINWEIS:
-                1) Formspree-URL oben mit echter ID ersetzen ODER
-                2) action auf eigenen Endpoint anpassen.
-                Solange FORM_ID_PLATZHALTER gesetzt ist, nutzt main.js automatisch mailto:-Fallback.
-              -->
-              <label for="name">Name *</label>
-              <input id="name" name="name" type="text" autocomplete="name" required />
-
-              <label for="email">E-Mail *</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-
-              <label for="telefon">Telefon *</label>
-              <input id="telefon" name="telefon" type="tel" autocomplete="tel" required />
-
-              <label for="betreff">Betreff / Leistung *</label>
-              <input id="betreff" name="betreff" type="text" required />
-
-              <label for="nachricht">Nachricht *</label>
-              <textarea id="nachricht" name="nachricht" rows="5" required></textarea>
-
-              <button class="btn btn-primary" type="submit">Anfrage senden</button>
-              <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
-            </form>
+      <!-- ================================================================
+           KUNDENSTIMMEN / TESTIMONIALS (Platzhalter)
+      ================================================================ -->
+      <section id="kundenstimmen" class="section section-alt">
+        <div class="container">
+          <p class="section-tag reveal">Was Kunden sagen</p>
+          <h2 class="reveal">Kundenstimmen</h2>
+          <p class="section-intro reveal">
+            <!-- PLATZHALTER-TESTIMONIALS: Echte Kundenstimmen einsetzen, sobald vorhanden -->
+            Echte Kundenstimmen folgen. Die folgenden Einträge sind Platzhalter.
+          </p>
+          <div class="testimonial-grid">
+            <article class="testimonial-card reveal" style="--reveal-delay: 0s">
+              <div class="testimonial-stars" aria-label="5 von 5 Sternen">
+                <!-- 5 Sterne (gefüllte SVGs) -->
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote>
+                <p>„Professionelle Arbeit, pünktlich und sauber. Das Team von Gebrüder Sadriji hat unsere Wohnung top renoviert – wir sind begeistert!"</p>
+              </blockquote>
+              <footer class="testimonial-author">
+                <strong>M. H.</strong>
+                <span>Zürich (Platzhalter)</span>
+              </footer>
+            </article>
+            <article class="testimonial-card reveal" style="--reveal-delay: 0.1s">
+              <div class="testimonial-stars" aria-label="5 von 5 Sternen">
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote>
+                <p>„Hervorragender Service – schnelle Reaktionszeit, faire Preise und einwandfreie Ausführung. Sehr zu empfehlen!"</p>
+              </blockquote>
+              <footer class="testimonial-author">
+                <strong>A. K.</strong>
+                <span>Zürich (Platzhalter)</span>
+              </footer>
+            </article>
+            <article class="testimonial-card reveal" style="--reveal-delay: 0.2s">
+              <div class="testimonial-stars" aria-label="5 von 5 Sternen">
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <svg class="icon icon-star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <blockquote>
+                <p>„Für unsere Bürorenovation waren Gebrüder Sadriji die perfekte Wahl: diskret, effizient und mit tollem Ergebnis. Klare Weiterempfehlung."</p>
+              </blockquote>
+              <footer class="testimonial-author">
+                <strong>T. B., Geschäftsführer</strong>
+                <span>Zürich (Platzhalter)</span>
+              </footer>
+            </article>
           </div>
+        </div>
+      </section>
 
-          <aside class="contact-info" aria-label="Kontaktdaten">
-            <h3>Direktkontakt</h3>
-            <ul>
-              <li><strong>Firma:</strong> Gebrüder Sadriji</li>
-              <li><strong>Standort:</strong> Zürich, Schweiz (Adress-Platzhalter)</li>
-              <li><strong>Telefon:</strong> <a href="tel:+41000000000">+41 XX XXX XX XX (Platzhalter)</a></li>
-              <li>
-                <strong>E-Mail:</strong>
-                <a href="mailto:kontakt@gebrueder-sadriji.ch">kontakt@gebrueder-sadriji.ch (Platzhalter)</a>
-              </li>
-              <li><strong>UID:</strong> CHE-113.308.264</li>
-            </ul>
-          </aside>
+      <!-- ================================================================
+           KONTAKT & SCHNELLANFRAGE
+      ================================================================ -->
+      <section id="kontakt" class="section section-contact-dark">
+        <div class="container">
+          <p class="section-tag section-tag-light reveal">Jetzt anfragen</p>
+          <h2 class="text-light reveal">Kontakt &amp; Schnellanfrage</h2>
+          <p class="section-intro section-intro-light reveal">
+            Senden Sie uns Ihre Anfrage – wir melden uns zeitnah mit einer passenden Lösung.
+          </p>
+          <div class="contact-grid">
+            <div class="contact-form-wrap reveal">
+              <form
+                id="anfrageformular"
+                class="contact-form"
+                action="https://formspree.io/f/FORM_ID_PLATZHALTER"
+                method="post"
+                novalidate
+              >
+                <!--
+                  BACKEND-HINWEIS:
+                  1) Formspree-URL oben mit echter ID ersetzen ODER
+                  2) action auf eigenen Endpoint anpassen.
+                  Solange FORM_ID_PLATZHALTER gesetzt ist, nutzt main.js automatisch mailto:-Fallback.
+                -->
+                <div class="form-field">
+                  <label for="name">Name *</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required placeholder="Ihr vollständiger Name" />
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="email">E-Mail *</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required placeholder="ihre@email.ch" />
+                  </div>
+                  <div class="form-field">
+                    <label for="telefon">Telefon *</label>
+                    <input id="telefon" name="telefon" type="tel" autocomplete="tel" required placeholder="+41 XX XXX XX XX" />
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="betreff">Betreff / Leistung *</label>
+                  <input id="betreff" name="betreff" type="text" required placeholder="z. B. Innenanstrich, Verputzarbeiten …" />
+                </div>
+                <div class="form-field">
+                  <label for="nachricht">Nachricht *</label>
+                  <textarea id="nachricht" name="nachricht" rows="5" required placeholder="Beschreiben Sie kurz Ihr Vorhaben …"></textarea>
+                </div>
+                <button class="btn btn-primary btn-large" type="submit">
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  Anfrage senden
+                </button>
+                <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+
+            <aside class="contact-info reveal" aria-label="Kontaktdaten" style="--reveal-delay: 0.15s">
+              <h3>Direktkontakt</h3>
+              <!-- PLATZHALTER-KONTAKTDATEN: Folgende Angaben durch echte Daten ersetzen -->
+              <ul class="contact-info-list">
+                <li>
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                  </svg>
+                  <span><strong>Gebrüder Sadriji</strong><br>Zürich, Schweiz<br>(Adress-Platzhalter)</span>
+                </li>
+                <li>
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47a2 2 0 0 1 1.98-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l1.3-1.3a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <!-- PLATZHALTER-TELEFON -->
+                  <a href="tel:+41000000000">+41 XX XXX XX XX (Platzhalter)</a>
+                </li>
+                <li>
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <!-- PLATZHALTER-E-MAIL -->
+                  <a href="mailto:kontakt@gebrueder-sadriji.ch">kontakt@gebrueder-sadriji.ch (Platzhalter)</a>
+                </li>
+                <li>
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                  <span>UID: CHE-113.308.264</span>
+                </li>
+              </ul>
+
+              <!-- CTA Notfall -->
+              <div class="contact-emergency-box">
+                <p class="contact-emergency-label">24/7 Notfalldienst</p>
+                <!-- PLATZHALTER-TELEFON -->
+                <a class="btn btn-emergency-large" href="tel:+41000000000">
+                  <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47a2 2 0 0 1 1.98-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l1.3-1.3a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  Jetzt anrufen: +41 XX XXX XX XX
+                </a>
+              </div>
+            </aside>
+          </div>
         </div>
       </section>
     </main>
 
+    <!-- ================================================================
+         FOOTER
+    ================================================================ -->
     <footer class="site-footer">
       <div class="container footer-grid">
-        <div>
+        <div class="footer-about">
+          <!-- PLATZHALTER-LOGO im Footer -->
           <p class="footer-brand">Gebrüder Sadriji</p>
-          <p>Bauunternehmen – Maler- und Gipserarbeiten</p>
-          <p>Zürich, Schweiz · UID CHE-113.308.264</p>
+          <p class="footer-tagline">Maler- und Gipserarbeiten<br>Zürich, Schweiz · UID CHE-113.308.264</p>
+          <!-- PLATZHALTER-TELEFON -->
+          <a class="footer-phone" href="tel:+41000000000">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47a2 2 0 0 1 1.98-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l1.3-1.3a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            +41 XX XXX XX XX (Platzhalter)
+          </a>
         </div>
-        <nav aria-label="Footer-Navigation">
+        <nav class="footer-nav" aria-label="Footer-Navigation">
+          <p class="footer-nav-title">Navigation</p>
           <ul>
             <li><a href="#start">Start</a></li>
+            <li><a href="#ueber-uns">Über uns</a></li>
             <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#ablauf">Ablauf</a></li>
+            <li><a href="#referenzen">Referenzen</a></li>
             <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+        <div class="footer-legal">
+          <p class="footer-nav-title">Rechtliches</p>
+          <ul>
             <li><span class="placeholder-link" aria-disabled="true">Impressum (Platzhalter)</span></li>
             <li><span class="placeholder-link" aria-disabled="true">Datenschutz (Platzhalter)</span></li>
           </ul>
-        </nav>
+        </div>
       </div>
       <div class="container footer-bottom">
         <p>&copy; <span id="jahr"></span> Gebrüder Sadriji. Alle Rechte vorbehalten.</p>
       </div>
     </footer>
 
-    <a class="floating-emergency" href="tel:+41000000000">
-      24/7 Notfall: +41 XX XXX XX XX
+    <!-- ================================================================
+         FLOATING-NOTFALL-BUTTON (24/7)
+         PLATZHALTER-TELEFON: href und data-label durch echte Nummer ersetzen
+    ================================================================ -->
+    <a
+      class="floating-emergency"
+      href="tel:+41000000000"
+      aria-label="24/7 Notfall anrufen: +41 XX XXX XX XX"
+      data-label="+41 XX XXX XX XX"
+    >
+      <!-- Puls-Ring (CSS-Animation) -->
+      <span class="floating-emergency-pulse" aria-hidden="true"></span>
+      <!-- Telefon-Icon -->
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.59 3.47a2 2 0 0 1 1.98-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l1.3-1.3a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+      <span class="floating-emergency-text">24/7 Notfall</span>
     </a>
 
     <script src="js/main.js"></script>
