@@ -336,7 +336,11 @@ h2 {
   visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
-  transition-delay: 0s;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0s linear 0s;
 }
 
 .main-nav ul {

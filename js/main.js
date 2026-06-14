@@ -80,12 +80,6 @@
     } else {
       desktopNavMedia.addListener(handleDesktopChange);
     }
-
-    window.addEventListener('resize', () => {
-      if (desktopNavMedia.matches) {
-        closeNav();
-      }
-    });
   }
 
   /* ================================================================
