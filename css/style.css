@@ -256,6 +256,7 @@ h2 {
   align-items: center;
   gap: var(--space-3);
   height: 100%;
+  position: relative;
 }
 
 .logo img {
@@ -307,19 +308,39 @@ h2 {
 }
 
 .main-nav {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  right: 0;
   grid-column: 1 / -1;
-  display: none;
   overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-0.35rem);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-md);
+  transition:
+    max-height 0.3s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0s linear 0.3s;
 }
 
 .main-nav.open {
-  display: block;
-  animation: navSlideDown 0.25s ease forwards;
-}
-
-@keyframes navSlideDown {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  max-height: 24rem;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition:
+    max-height 0.3s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0s linear 0s;
 }
 
 .main-nav ul {
@@ -354,20 +375,20 @@ h2 {
   gap: var(--space-2);
   text-decoration: none;
   color: #fff;
-  background: var(--color-danger);
+  background: var(--color-accent);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-full);
   font-weight: 700;
   font-size: 0.875rem;
   transition: var(--transition-base);
-  box-shadow: 0 2px 8px var(--color-danger-glow);
+  box-shadow: 0 2px 8px var(--color-accent-glow);
   white-space: nowrap;
 }
 
 .header-emergency:hover,
 .header-emergency:focus-visible {
-  background: var(--color-danger-hover);
-  box-shadow: 0 4px 16px var(--color-danger-glow);
+  background: var(--color-accent-hover);
+  box-shadow: 0 4px 16px var(--color-accent-glow);
   transform: translateY(-1px);
 }
 
@@ -1414,8 +1435,20 @@ h2 {
   }
 
   .main-nav {
+    position: static;
     display: block !important;
     grid-column: auto;
+    overflow: visible;
+    max-height: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    transition: none;
   }
 
   .main-nav ul {
@@ -1423,10 +1456,6 @@ h2 {
     display: flex;
     justify-content: center;
     gap: var(--space-1);
-  }
-
-  .main-nav.open {
-    animation: none;
   }
 
   .header-emergency {

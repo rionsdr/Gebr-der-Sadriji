@@ -15,24 +15,71 @@
   const navToggle = document.querySelector('.nav-toggle');
   const mainNav   = document.querySelector('.main-nav');
   const navLinks  = document.querySelectorAll('.main-nav a');
+  const desktopNavMedia = window.matchMedia('(min-width: 48rem)');
 
   if (navToggle && mainNav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = mainNav.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-      navToggle.setAttribute('aria-label', isOpen ? 'Menü schliessen' : 'Menü öffnen');
+    const closeNav = () => {
+      mainNav.classList.remove('open');
+      mainNav.setAttribute('aria-hidden', desktopNavMedia.matches ? 'false' : 'true');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Menü öffnen');
+    };
+
+    const openNav = () => {
+      mainNav.classList.add('open');
+      mainNav.setAttribute('aria-hidden', 'false');
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.setAttribute('aria-label', 'Menü schliessen');
+    };
+
+    const toggleNav = () => {
+      const isOpen = mainNav.classList.contains('open');
+      if (isOpen) {
+        closeNav();
+      } else {
+        openNav();
+      }
+    };
+
+    closeNav();
+
+    navToggle.addEventListener('click', (event) => {
+      event.stopPropagation();
+      toggleNav();
     });
 
     // Menü schliessen wenn ein Nav-Link geklickt wird (Mobile)
     navLinks.forEach((link) => {
       link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-          mainNav.classList.remove('open');
-          navToggle.setAttribute('aria-expanded', 'false');
-          navToggle.setAttribute('aria-label', 'Menü öffnen');
+        if (!desktopNavMedia.matches) {
+          closeNav();
         }
       });
     });
+
+    // Menü schliessen bei Klick ausserhalb
+    document.addEventListener('click', (event) => {
+      if (!mainNav.classList.contains('open') || desktopNavMedia.matches) return;
+      if (mainNav.contains(event.target) || navToggle.contains(event.target)) return;
+      closeNav();
+    });
+
+    // Menü schliessen bei ESC
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeNav();
+      }
+    });
+
+    // Menüzustand beim Breakpoint-Wechsel konsistent halten
+    const handleDesktopChange = () => {
+      closeNav();
+    };
+    if (typeof desktopNavMedia.addEventListener === 'function') {
+      desktopNavMedia.addEventListener('change', handleDesktopChange);
+    } else {
+      desktopNavMedia.addListener(handleDesktopChange);
+    }
   }
 
   /* ================================================================
@@ -88,9 +135,11 @@
 
       event.preventDefault();
 
+      const isTopAnchor = targetId === '#top';
       const headerHeight = siteHeader ? siteHeader.offsetHeight : 0;
-      const targetPosition =
-        targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+      const targetPosition = isTopAnchor
+        ? 0
+        : targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
 
       if (prefersReducedMotion()) {
         window.scrollTo({ top: targetPosition });
@@ -254,6 +303,8 @@
       const hasPlaceholderEndpoint = endpoint.includes('FORM_ID_PLATZHALTER');
 
       if (hasPlaceholderEndpoint) {
+        // PLATZHALTER-FALLBACK: auf echte Manager-Adresse ändern, falls kein Formspree-Endpoint hinterlegt ist
+        const managerEmailPlaceholder = 'kontakt@gebrueder-sadriji.ch';
         // MAILTO-FALLBACK solange kein Formular-Backend angebunden ist
         const name       = normalizeSingleLine(formData.get('name'));
         const email      = normalizeSingleLine(formData.get('email'));
@@ -265,7 +316,7 @@
           subject: `Anfrage: ${subjectRaw}`,
           body:    bodyRaw,
         });
-        window.location.href = `mailto:kontakt@gebrueder-sadriji.ch?${params.toString()}`;
+        window.location.href = `mailto:${managerEmailPlaceholder}?${params.toString()}`;
         feedback.textContent =
           'Ihr Mailprogramm wurde geöffnet. Bitte Nachricht senden, um die Anfrage abzuschliessen.';
         form.reset();
