@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Gebrüder Sadriji aus Zürich: Maler- und Gipserarbeiten in Schweizer Qualität. 40+ Jahre Erfahrung. Jetzt schnell und unkompliziert Anfrage stellen oder 24/7 Notfall anrufen."
+      content="Gebrüder Sadriji aus Zürich: Maler- und Gipserarbeiten in Schweizer Qualität. 40+ Jahre Erfahrung. Kostenlose Anfrage senden oder 24/7 Notfall anrufen."
     />
     <title>Gebrüder Sadriji | Maler- &amp; Gipserarbeiten in Zürich</title>
     <link rel="stylesheet" href="css/style.css" />
@@ -573,21 +573,21 @@
               <form
                 id="anfrageformular"
                 class="contact-form"
-                action="https://formspree.io/f/FORM_ID_PLATZHALTER"
+                action="https://formspree.io/f/xpqekneb"
                 method="post"
                 novalidate
               >
                 <!--
-                  FORMSPREE IN 2 MIN AKTIVIEREN (Manager erhält Anfrage-E-Mails ohne Mailprogramm beim Besucher):
-                  1) Auf https://formspree.io registrieren und Formular erstellen.
-                  2) Endpoint-URL (https://formspree.io/f/XXXXXX) im action-Attribut eintragen.
-                  3) Empfänger-Adresse (Manager-Postfach) im Formspree-Dashboard hinterlegen.
-                  Solange FORM_ID_PLATZHALTER gesetzt ist, nutzt main.js automatisch mailto:-Fallback.
-                  Wichtig: Die Fallback-Adresse kontakt@gebrueder-sadriji.ch in js/main.js wird hier bewusst als Platzhalter genutzt
-                  und muss bei Bedarf auf die echte Manager-E-Mail geändert werden.
+                  Formspree ist aktiv: Dieses Formular sendet an https://formspree.io/f/xpqekneb.
+                  Die Empfänger-E-Mail wird im Formspree-Dashboard für das Formular «xpqekneb» festgelegt;
+                  dorthin gehen alle Anfragen des Managers automatisch per E-Mail.
+                  Falls künftig wieder ein Platzhalter-Endpoint eingetragen wird, nutzt main.js als Fallback
+                  weiterhin die bewusst als Platzhalter markierte mailto:-Adresse kontakt@gebrueder-sadriji.ch.
                 -->
                 <!-- Formspree-Betreff für klare Zuordnung im Manager-Postfach -->
                 <input type="hidden" name="_subject" value="Neue Anfrage über die Website Gebrüder Sadriji" />
+                <!-- Spam-Schutz: Dieses Feld bleibt für echte Besucher unsichtbar und leer -->
+                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none" />
                 <div class="form-field">
                   <label for="name">Name *</label>
                   <input id="name" name="name" type="text" autocomplete="name" required placeholder="Ihr vollständiger Name" />
@@ -615,7 +615,7 @@
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                   </svg>
-                  Anfrage senden
+                  <span class="btn-label">Anfrage senden</span>
                 </button>
                 <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
               </form>
