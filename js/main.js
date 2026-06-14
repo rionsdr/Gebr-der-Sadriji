@@ -310,7 +310,7 @@
 
       if (hasPlaceholderEndpoint) {
         // PLATZHALTER-FALLBACK: auf echte Manager-Adresse ändern, falls kein Formspree-Endpoint hinterlegt ist
-        const fallbackManagerMailPlaceholder = 'kontakt@gebrueder-sadriji.ch';
+        const managerEmailPlaceholder = 'kontakt@gebrueder-sadriji.ch';
         // MAILTO-FALLBACK solange kein Formular-Backend angebunden ist
         const name       = normalizeSingleLine(formData.get('name'));
         const email      = normalizeSingleLine(formData.get('email'));
@@ -322,7 +322,7 @@
           subject: `Anfrage: ${subjectRaw}`,
           body:    bodyRaw,
         });
-        window.location.href = `mailto:${fallbackManagerMailPlaceholder}?${params.toString()}`;
+        window.location.href = `mailto:${managerEmailPlaceholder}?${params.toString()}`;
         feedback.textContent =
           'Ihr Mailprogramm wurde geöffnet. Bitte Nachricht senden, um die Anfrage abzuschliessen.';
         form.reset();

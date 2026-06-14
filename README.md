@@ -113,7 +113,7 @@ python3 -m http.server 8000
 - **Schritt 3:** Empfängeradresse des Managers im Formspree-Dashboard hinterlegen
 - Versand erfolgt dann per `fetch` im Hintergrund (kein Mailprogramm beim Besucher)
 - Solange `FORM_ID_PLATZHALTER` gesetzt ist, greift automatisch der `mailto:`-Fallback
-- Die Fallback-Empfängeradresse steht in `js/main.js` als `fallbackManagerMailPlaceholder` und ist aktuell ein Platzhalter
+- Die Fallback-Empfängeradresse steht in `js/main.js` als `managerEmailPlaceholder` und ist aktuell ein Platzhalter
   (`kontakt@gebrueder-sadriji.ch`) – für den Produktivbetrieb auf die echte Manager-E-Mail anpassen
 
 ### 9) Kennzahl «350+ Projekte» verifizieren
