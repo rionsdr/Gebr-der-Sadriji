@@ -1,2 +1,2 @@
-# Gebr-der-Sadriji
-Digitale Präsenz für Gebrüder Sadiji – Maler- und Gipserarbeiten mit Schweizer Qualität aus Zürich.
+# Gebrüder-Sadriji
+Digitale Präsenz für Gebrüder Sadriji – Maler- und Gipserarbeiten mit Schweizer Qualität aus Zürich.
