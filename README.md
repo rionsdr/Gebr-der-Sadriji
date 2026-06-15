@@ -76,7 +76,7 @@ python3 -m http.server 8000
 - Alle abgeleiteten Farben (Hover, Glow, Badge-Tints) passen sich automatisch an
 
 ### 2) Logo ersetzen
-- **Aktuelle Einbindung:** `assets/logo.png` im Header (`index.html`)
+- **Aktuelle Einbindung:** `assets/logo.png` als sauber benannte, web-taugliche Logo-Kopie im Header (`index.html`)
 - **Künftiger Austausch:** Datei `assets/logo.png` mit einem neuen Export **unter gleichem Dateinamen** ersetzen
 - **Anzeigegrösse:** via `.logo img` in `css/style.css` anpassen
 - **Hinweis:** Die ursprüngliche Upload-Datei `assets/gebrüder sadriji logo transparent.png` bleibt im Repo, wird aber bewusst **nicht** direkt referenziert
@@ -133,7 +133,7 @@ python3 -m http.server 8000
 - Firmenlogo im Header eingebunden über **`assets/logo.png`** (sauberer Dateiname ohne Leerzeichen/Umlaute in der Referenz)
 
 ### 11) Performance-Hinweis zum Logo
-- Die eingebundene PNG `assets/logo.png` ist relativ gross. Für schnellere Ladezeiten kann sie bei Bedarf später verlustarm verkleinert oder zusätzlich optimiert werden, ohne den Dateinamen zu ändern.
+- Die eingebundene PNG `assets/logo.png` ist bereits als verkleinerte Web-Kopie abgelegt. Für noch schnellere Ladezeiten kann sie bei Bedarf später weiter verlustarm optimiert werden, ohne den Dateinamen zu ändern.
 
 ---
 

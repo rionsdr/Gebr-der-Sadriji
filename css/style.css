@@ -271,7 +271,9 @@ h2 {
 .logo img {
   display: block;
   width: auto;
+  /* Desktop: knapp unter Headerhöhe halten, damit die Wortmarke scharf bleibt und nicht in die Navigation drückt. */
   height: min(3.2rem, calc(var(--header-height) - var(--logo-max-height-offset)));
+  /* Breite deckelt die Wortmarke auf kleinen Viewports, ohne sie im Sticky-Header zu dominant werden zu lassen. */
   max-width: min(12rem, 48vw);
   object-fit: contain;
 }
@@ -1576,6 +1578,7 @@ h2 {
   }
 
   .logo img {
+    /* Mobile: leicht kleiner, damit Logo und Burger-Menü im 4.5rem-Header entspannt Platz haben. */
     height: min(2.85rem, calc(var(--header-height) - var(--logo-max-height-offset)));
     max-width: min(10.5rem, 46vw);
   }
