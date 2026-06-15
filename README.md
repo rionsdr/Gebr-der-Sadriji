@@ -82,7 +82,7 @@ python3 -m http.server 8000
 - **Hinweis:** Die ursprüngliche Upload-Datei `assets/gebrüder sadriji logo transparent.png` bleibt im Repo, wird aber bewusst **nicht** direkt referenziert
 
 ### 3) Telefonnummer ändern
-- Aktuell überall gesetzt auf: **`+41 76 462 50 38`** (`tel:+41764625038`)
+- Aktuell überall gesetzt auf: **`+41 78 255 88 25`** (`tel:+41782558825`)
 - Bei Bedarf global in `index.html` die sichtbaren Nummern sowie `tel:`-Links anpassen:
   - Hero-Sekundär-CTA (`.btn-hero-emergency`)
   - Kontaktbereich (`.contact-info-list`)
@@ -92,7 +92,9 @@ python3 -m http.server 8000
 
 ### 4) Adresse & E-Mail ergänzen
 - **Datei:** `index.html`, Sektion `#kontakt`
-- Suchen nach `Adress-Platzhalter` und `kontakt@gebrueder-sadriji.ch (Platzhalter)`
+- Adresse: Suchen nach `Adress-Platzhalter`
+- E-Mail **`kontakt@gebrueder-sadriji.ch`** ist im Direktkontakt (`.contact-info-list`) als echter `mailto:`-Link gesetzt
+- WhatsApp Business: sichtbarer Eintrag in `.contact-info-list` sowie CTA-Button `.btn-whatsapp-large`, beide verlinken auf **`https://wa.me/41782558825`** (`+41 78 255 88 25`)
 
 ### 5) Hero-Hintergrundbild einsetzen
 - **Datei:** `css/style.css`, Klasse `.hero-bg`
@@ -128,7 +130,7 @@ python3 -m http.server 8000
 ### 10) Aktuelle Inhaltsstände
 - Mitarbeitende: **19** (Hero + Über-uns-Statistik)
 - Leistungen erweitert um: **Umbau, Trockenbau, Nassbau**
-- Telefonnummer überall gesetzt auf: **`+41 76 462 50 38`** (`tel:+41764625038`)
+- Telefonnummer überall gesetzt auf: **`+41 78 255 88 25`** (`tel:+41782558825`)
 - Anfrage-CTAs im UI vereinheitlicht auf: **«Kostenlose Anfrage»**
 - Firmenlogo im Header eingebunden über **`assets/logo.png`** (sauberer Dateiname ohne Leerzeichen/Umlaute in der Referenz)
 
