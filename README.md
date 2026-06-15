@@ -92,7 +92,7 @@ python3 -m http.server 8000
 
 ### 4) Adresse & E-Mail ergänzen
 - **Datei:** `index.html`, Sektion `#kontakt`
-- Adresse: Suchen nach `Adress-Platzhalter`
+- Adresse: **Altwiesenstrasse 199, 8051 Zürich** ist im Direktkontakt (`.contact-info-list`) sowie im Footer (`.footer-tagline`) hinterlegt
 - E-Mail **`kontakt@gebrueder-sadriji.ch`** ist im Direktkontakt (`.contact-info-list`) als echter `mailto:`-Link gesetzt
 - WhatsApp Business: sichtbarer Eintrag in `.contact-info-list` sowie CTA-Button `.btn-whatsapp-large`, beide verlinken auf **`https://wa.me/41782558825`** (`+41 78 255 88 25`)
 
