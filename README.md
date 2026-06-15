@@ -28,7 +28,7 @@ Professionelle, moderne und responsive Website für **Gebrüder Sadriji** (Maler
 │   └── main.js             ← Burger-Menü, Animationen, Formular
 ├── assets/
 │   ├── logo.png            ← Eingebundenes Firmenlogo im Header
-│   ├── gebrüder sadriji logo transparent.png
+│   ├── gebrüder sadriji logo transparent.png   ← Originaldatei aus dem Kunden-Upload
 │   ├── logo-placeholder.svg
 │   └── images/
 │       └── reference-placeholder.svg

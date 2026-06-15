@@ -260,16 +260,18 @@ h2 {
 }
 
 .logo {
+  --logo-vertical-padding: 0.45rem;
+  --logo-max-height-offset: calc(var(--logo-vertical-padding) * 2);
   display: inline-flex;
   align-items: center;
   height: 100%;
-  padding-block: 0.45rem;
+  padding-block: var(--logo-vertical-padding);
 }
 
 .logo img {
   display: block;
   width: auto;
-  height: min(3.2rem, calc(var(--header-height) - 0.9rem));
+  height: min(3.2rem, calc(var(--header-height) - var(--logo-max-height-offset)));
   max-width: min(12rem, 48vw);
   object-fit: contain;
 }
@@ -1570,11 +1572,11 @@ h2 {
   }
 
   .logo {
-    padding-block: 0.55rem;
+    --logo-vertical-padding: 0.55rem;
   }
 
   .logo img {
-    height: min(2.85rem, calc(var(--header-height) - 1.15rem));
+    height: min(2.85rem, calc(var(--header-height) - var(--logo-max-height-offset)));
     max-width: min(10.5rem, 46vw);
   }
 
