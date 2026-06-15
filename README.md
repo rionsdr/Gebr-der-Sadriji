@@ -27,6 +27,8 @@ Professionelle, moderne und responsive Website für **Gebrüder Sadriji** (Maler
 ├── js/
 │   └── main.js             ← Burger-Menü, Animationen, Formular
 ├── assets/
+│   ├── logo.png            ← Eingebundenes Firmenlogo im Header
+│   ├── gebrüder sadriji logo transparent.png   ← Originaldatei aus dem Kunden-Upload
 │   ├── logo-placeholder.svg
 │   └── images/
 │       └── reference-placeholder.svg
@@ -74,8 +76,10 @@ python3 -m http.server 8000
 - Alle abgeleiteten Farben (Hover, Glow, Badge-Tints) passen sich automatisch an
 
 ### 2) Logo ersetzen
-- **Datei:** `assets/logo-placeholder.svg` durch finale Logo-Datei ersetzen
-- **Einbindung:** `index.html` – `<img src="assets/logo-placeholder.svg" ...>` im Header (Pfad anpassen)
+- **Aktuelle Einbindung:** `assets/logo.png` als sauber benannte, web-taugliche Logo-Kopie im Header (`index.html`)
+- **Künftiger Austausch:** Datei `assets/logo.png` mit einem neuen Export **unter gleichem Dateinamen** ersetzen
+- **Anzeigegrösse:** via `.logo img` in `css/style.css` anpassen
+- **Hinweis:** Die ursprüngliche Upload-Datei `assets/gebrüder sadriji logo transparent.png` bleibt im Repo, wird aber bewusst **nicht** direkt referenziert
 
 ### 3) Telefonnummer ändern
 - Aktuell überall gesetzt auf: **`+41 76 462 50 38`** (`tel:+41764625038`)
@@ -126,6 +130,10 @@ python3 -m http.server 8000
 - Leistungen erweitert um: **Umbau, Trockenbau, Nassbau**
 - Telefonnummer überall gesetzt auf: **`+41 76 462 50 38`** (`tel:+41764625038`)
 - Anfrage-CTAs im UI vereinheitlicht auf: **«Kostenlose Anfrage»**
+- Firmenlogo im Header eingebunden über **`assets/logo.png`** (sauberer Dateiname ohne Leerzeichen/Umlaute in der Referenz)
+
+### 11) Performance-Hinweis zum Logo
+- Die eingebundene PNG `assets/logo.png` ist bereits als verkleinerte Web-Kopie abgelegt. Für noch schnellere Ladezeiten kann sie bei Bedarf später weiter verlustarm optimiert werden, ohne den Dateinamen zu ändern.
 
 ---
 
