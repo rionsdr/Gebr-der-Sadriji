@@ -259,9 +259,19 @@ h2 {
   position: relative;
 }
 
+.logo {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  padding-block: 0.45rem;
+}
+
 .logo img {
-  width: 11rem;
-  height: auto;
+  display: block;
+  width: auto;
+  height: min(3.2rem, calc(var(--header-height) - 0.9rem));
+  max-width: min(12rem, 48vw);
+  object-fit: contain;
 }
 
 /* Burger-Menü-Button */
@@ -1557,6 +1567,15 @@ h2 {
 @media (max-width: 63.99rem) {
   .floating-emergency-text {
     display: none;
+  }
+
+  .logo {
+    padding-block: 0.55rem;
+  }
+
+  .logo img {
+    height: min(2.85rem, calc(var(--header-height) - 1.15rem));
+    max-width: min(10.5rem, 46vw);
   }
 
   .floating-emergency {
