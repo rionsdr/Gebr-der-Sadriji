@@ -521,6 +521,30 @@ h2 {
   transform: translateY(-2px);
 }
 
+.btn-whatsapp-large {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: #25d366;
+  color: #fff;
+  border-radius: var(--radius-full);
+  padding: 0.9rem 1.8rem;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: var(--transition-base);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-whatsapp-large:hover,
+.btn-whatsapp-large:focus-visible {
+  background: #1ebe5d;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+  transform: translateY(-2px);
+}
+
 /* ================================================================
    HERO-SEKTION
 ================================================================ */

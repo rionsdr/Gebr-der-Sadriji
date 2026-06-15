@@ -380,7 +380,7 @@
 
         if (!response.ok) {
           let errorMessage =
-            'Ihre Anfrage konnte nicht übermittelt werden. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns telefonisch unter +41 76 462 50 38.';
+            'Ihre Anfrage konnte nicht übermittelt werden. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns telefonisch unter +41 78 255 88 25.';
 
           try {
             const data = await response.json();
@@ -391,7 +391,7 @@
               : [];
 
             if (formspreeErrors.length) {
-              errorMessage = `${formspreeErrors.join('. ')}. Alternativ erreichen Sie uns telefonisch unter +41 76 462 50 38.`;
+              errorMessage = `${formspreeErrors.join('. ')}. Alternativ erreichen Sie uns telefonisch unter +41 78 255 88 25.`;
             }
           } catch (_parseError) {
             // Defensive Fehlerbehandlung: ungültige oder leere JSON-Antwort ignorieren
@@ -409,7 +409,7 @@
         setFeedback(
           error instanceof Error
             ? error.message
-            : 'Senden aktuell nicht möglich. Bitte kontaktieren Sie uns alternativ telefonisch unter +41 76 462 50 38.',
+            : 'Senden aktuell nicht möglich. Bitte kontaktieren Sie uns alternativ telefonisch unter +41 78 255 88 25.',
           'error'
         );
       } finally {
