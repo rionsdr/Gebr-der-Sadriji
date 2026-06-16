@@ -501,9 +501,16 @@
       el.textContent = t(el.getAttribute('data-i18n'), lang);
     });
 
-    // Explizit als HTML markierte Elemente (ausschliesslich eigene Strings mit <br>)
+    // Explizit als HTML markierte Elemente.
+    // Unterstützt nur <br> – wird sicher über DOM-Methoden gesetzt, kein innerHTML.
     document.querySelectorAll('[data-i18n-html]').forEach((el) => {
-      el.innerHTML = t(el.getAttribute('data-i18n-html'), lang);
+      const text  = t(el.getAttribute('data-i18n-html'), lang);
+      const parts = text.split(/<br\s*\/?>/i);
+      el.textContent = '';
+      parts.forEach((part, i) => {
+        el.appendChild(document.createTextNode(part));
+        if (i < parts.length - 1) el.appendChild(document.createElement('br'));
+      });
     });
 
     // Placeholder-Attribute
