@@ -1133,3 +1133,152 @@ a { color: inherit; }
     max-width: min(11.5rem, 46vw);
   }
 }
+
+/* ================================================================
+   RECHTLICHE SEITEN (Impressum, AGB, Datenschutz)
+================================================================ */
+
+/* Page-Hero für Rechtsseiten */
+.legal-page-hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  color: #fff;
+  padding: calc(var(--header-height) + var(--space-16)) 0 var(--space-12);
+  text-align: center;
+}
+.legal-page-hero .breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-4);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.legal-page-hero .breadcrumb a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.legal-page-hero .breadcrumb a:hover { color: var(--color-accent); }
+.legal-page-hero .breadcrumb-sep { color: rgba(255, 255, 255, 0.35); }
+.legal-page-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.legal-page-hero .legal-meta {
+  margin: var(--space-4) 0 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Hauptinhalt der Rechtsseiten */
+.legal-content {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-6) var(--space-20);
+}
+
+.legal-content h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin: var(--space-10) 0 var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--color-border-soft);
+  letter-spacing: -0.01em;
+}
+.legal-content h2:first-of-type { margin-top: 0; }
+
+.legal-content p {
+  margin: 0 0 var(--space-4);
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+.legal-content ul {
+  margin: 0 0 var(--space-4);
+  padding-left: var(--space-6);
+  line-height: 1.75;
+}
+.legal-content ul li { margin-bottom: var(--space-2); color: var(--color-text); }
+
+.legal-content address {
+  font-style: normal;
+  background: var(--color-bg-alt);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-5) var(--space-6);
+  margin: 0 0 var(--space-4);
+  line-height: 1.85;
+  color: var(--color-text);
+}
+.legal-content address strong {
+  display: block;
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: var(--space-2);
+  color: var(--color-primary);
+}
+.legal-content address a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.legal-content address a:hover { color: var(--color-accent-hover); text-decoration: underline; }
+
+.legal-content .uid-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--space-1) var(--space-3);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  margin-top: var(--space-2);
+}
+
+.legal-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: var(--space-3) 0;
+  transition: color 0.2s ease, gap 0.2s ease;
+  margin-bottom: var(--space-8);
+}
+.legal-back-link:hover { color: var(--color-accent); gap: var(--space-3); }
+.legal-back-link svg { flex-shrink: 0; transition: transform 0.2s ease; }
+.legal-back-link:hover svg { transform: translateX(-3px); }
+
+/* Nummerierte AGB-Abschnitte */
+.legal-section {
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--color-border-soft);
+  margin-bottom: var(--space-6);
+}
+.legal-section:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+/* Stand-Zeile */
+.legal-stand {
+  margin-top: var(--space-10);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-border-soft);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+@media (max-width: 47.99rem) {
+  .legal-content { padding: var(--space-10) var(--space-4) var(--space-16); }
+  .legal-page-hero { padding: calc(var(--header-height) + var(--space-10)) 0 var(--space-8); }
+  .legal-content h2 { font-size: 1.1rem; }
+}
