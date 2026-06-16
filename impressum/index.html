@@ -12,6 +12,23 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/icon-180.png" />
     <link rel="manifest" href="../assets/site.webmanifest" />
     <meta name="theme-color" content="#123047" />
+
+    <!-- Google Consent Mode v2 – Standardwerte (vor dem Google Tag gesetzt) -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage:        'denied',
+        analytics_storage: 'denied',
+        wait_for_update:   500
+      });
+    </script>
+    <!-- Google tag (gtag.js) – AW-18241166068 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18241166068"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'AW-18241166068');
+    </script>
   </head>
   <body>
     <!-- Barrierefreiheit: Sprunglink zum Hauptinhalt -->
@@ -213,6 +230,7 @@
       <span class="floating-call-text" data-i18n="floatingBtn.text">Jetzt anrufen</span>
     </a>
 
+    <script src="../js/gtag.js"></script>
     <script src="../js/main.js"></script>
   </body>
 </html>

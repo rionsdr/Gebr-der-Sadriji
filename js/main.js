@@ -863,6 +863,9 @@
 
         setFeedback(t('form.success', currentLang), 'success');
         form.reset();
+        if (typeof window.trackContactFormSubmit === 'function') {
+          window.trackContactFormSubmit();
+        }
       } catch (error) {
         setFeedback(
           error instanceof Error ? error.message : t('form.error.send', currentLang),
