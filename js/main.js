@@ -120,6 +120,8 @@
       'floatingBtn.text':            'Jetzt anrufen',
       'nav.menuOpen':                'Menü öffnen',
       'nav.menuClose':               'Menü schliessen',
+      'meta.description':            'Gebrüder Sadriji aus Zürich: Maler- und Gipserarbeiten in Schweizer Qualität. 40+ Jahre Erfahrung. Kostenlose Anfrage senden oder telefonisch kontaktieren.',
+      'form.email.subject':          'Neue Anfrage über die Website Gebrüder Sadriji',
     },
 
     en: {
@@ -230,6 +232,8 @@
       'floatingBtn.text':            'Call now',
       'nav.menuOpen':                'Open menu',
       'nav.menuClose':               'Close menu',
+      'meta.description':            'Gebrüder Sadriji – Zürich: Painting and plastering in Swiss quality. 40+ years of experience. Request a free quote or call us any time.',
+      'form.email.subject':          'New enquiry via the Gebrüder Sadriji website',
     },
 
     fr: {
@@ -340,6 +344,8 @@
       'floatingBtn.text':            'Appeler maintenant',
       'nav.menuOpen':                'Ouvrir le menu',
       'nav.menuClose':               'Fermer le menu',
+      'meta.description':            'Gebrüder Sadriji – Zurich : Travaux de peinture et de plâtrerie en qualité suisse. Plus de 40 ans d\'expérience. Demande gratuite ou contact téléphonique.',
+      'form.email.subject':          'Nouvelle demande via le site web Gebrüder Sadriji',
     },
 
     it: {
@@ -450,6 +456,8 @@
       'floatingBtn.text':            'Chiama ora',
       'nav.menuOpen':                'Apri menu',
       'nav.menuClose':               'Chiudi menu',
+      'meta.description':            'Gebrüder Sadriji – Zurigo: Lavori di pittura e stucco in qualità svizzera. Oltre 40 anni di esperienza. Richiesta gratuita o contatto telefonico.',
+      'form.email.subject':          'Nuova richiesta tramite il sito web Gebrüder Sadriji',
     },
   };
 
@@ -505,7 +513,7 @@
     // Unterstützt nur <br> – wird sicher über DOM-Methoden gesetzt, kein innerHTML.
     document.querySelectorAll('[data-i18n-html]').forEach((el) => {
       const text  = t(el.getAttribute('data-i18n-html'), lang);
-      const parts = text.split(/<br\s*\/?>/i);
+      const parts = text.split(/\s*<br\s*\/?>\s*/i);
       el.textContent = '';
       parts.forEach((part, i) => {
         el.appendChild(document.createTextNode(part));
@@ -538,6 +546,14 @@
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-label', t(isOpen ? 'nav.menuClose' : 'nav.menuOpen', lang));
     }
+
+    // Meta-Description aktualisieren (SEO für alle Sprachen)
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', t('meta.description', lang));
+
+    // Formspree-Betreff sprachgerecht setzen
+    const subjectField = document.querySelector('input[name="_subject"]');
+    if (subjectField) subjectField.value = t('form.email.subject', lang);
   };
 
   /**
@@ -808,7 +824,7 @@
       const hasPlaceholder = endpoint.includes('FORM_ID_PLATZHALTER');
 
       if (hasPlaceholder) {
-        const managerEmail = 'kontakt@gebrueder-sadriji.ch';
+        const contactEmail = 'kontakt@gebrueder-sadriji.ch';
         const name       = normalizeSingleLine(formData.get('name'));
         const email      = normalizeSingleLine(formData.get('email'));
         const phone      = normalizeSingleLine(formData.get('telefon'));
@@ -816,7 +832,7 @@
         const subjectRaw = normalizeSingleLine(formData.get('betreff')) || 'Neue Anfrage';
         const bodyRaw    = `Name: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\n\nNachricht:\n${message}`;
         const params     = new URLSearchParams({ subject: `Anfrage: ${subjectRaw}`, body: bodyRaw });
-        window.location.href = `mailto:${managerEmail}?${params.toString()}`;
+        window.location.href = `mailto:${contactEmail}?${params.toString()}`;
         setFeedback(t('form.mailOpened', currentLang));
         form.reset();
         return;
