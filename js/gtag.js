@@ -223,8 +223,9 @@
     banner.setAttribute('aria-modal', 'false');
     banner.setAttribute('aria-label', 'Cookie-Einstellungen');
 
-    // Datenschutz-Link: funktioniert sowohl auf / als auch auf Unterseiten
-    var privacyPath = (window.location.pathname === '/' || window.location.pathname === '/index.html')
+    // Datenschutz-Link: relativ zur aktuellen Seite auflösen
+    var pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+    var privacyPath = (pathname === '' || pathname === '/' || /\/index\.html?$/.test(pathname))
       ? '/datenschutz/'
       : '../datenschutz/';
 
