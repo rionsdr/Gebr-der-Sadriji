@@ -118,6 +118,8 @@
       'footer.privacy':              'Datenschutz',
       'footer.rights':               'Alle Rechte vorbehalten.',
       'floatingBtn.text':            'Jetzt anrufen',
+      'nav.menuOpen':                'Menü öffnen',
+      'nav.menuClose':               'Menü schliessen',
     },
 
     en: {
@@ -226,6 +228,8 @@
       'footer.privacy':              'Privacy policy',
       'footer.rights':               'All rights reserved.',
       'floatingBtn.text':            'Call now',
+      'nav.menuOpen':                'Open menu',
+      'nav.menuClose':               'Close menu',
     },
 
     fr: {
@@ -334,6 +338,8 @@
       'footer.privacy':              'Protection des données',
       'footer.rights':               'Tous droits réservés.',
       'floatingBtn.text':            'Appeler maintenant',
+      'nav.menuOpen':                'Ouvrir le menu',
+      'nav.menuClose':               'Fermer le menu',
     },
 
     it: {
@@ -442,6 +448,8 @@
       'footer.privacy':              'Protezione dei dati',
       'footer.rights':               'Tutti i diritti riservati.',
       'floatingBtn.text':            'Chiama ora',
+      'nav.menuOpen':                'Apri menu',
+      'nav.menuClose':               'Chiudi menu',
     },
   };
 
@@ -478,20 +486,24 @@
     return dict[key] ?? translations[DEFAULT_LANG][key] ?? key;
   };
 
+  /** Explizite Sprach-Code-Zuordnung für das <html lang="…"> Attribut */
+  const LANG_CODES = { de: 'de-CH', en: 'en', fr: 'fr-CH', it: 'it-CH' };
+
   /**
-   * Aktualisiert alle [data-i18n] und [data-i18n-placeholder] Elemente.
+   * Aktualisiert alle [data-i18n], [data-i18n-html] und [data-i18n-placeholder] Elemente.
+   * data-i18n       → setzt textContent (XSS-sicher)
+   * data-i18n-html  → setzt innerHTML nur für explizit markierte, vertrauenswürdige Elemente
+   *                    (ausschliesslich eigene, statische Übersetzungsstrings, kein User-Input)
    */
   const applyTranslations = (lang) => {
-    // Textinhalt
+    // Reiner Textinhalt – kein HTML-Parsing
     document.querySelectorAll('[data-i18n]').forEach((el) => {
-      const key  = el.getAttribute('data-i18n');
-      const text = t(key, lang);
-      // HTML-Entitäten und <br> erlauben (nur in vertrauenswürdigen eigenen Texten)
-      if (text.includes('<')) {
-        el.innerHTML = text;
-      } else {
-        el.textContent = text;
-      }
+      el.textContent = t(el.getAttribute('data-i18n'), lang);
+    });
+
+    // Explizit als HTML markierte Elemente (ausschliesslich eigene Strings mit <br>)
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+      el.innerHTML = t(el.getAttribute('data-i18n-html'), lang);
     });
 
     // Placeholder-Attribute
@@ -501,7 +513,7 @@
     });
 
     // <html lang="…"> aktualisieren
-    document.documentElement.lang = lang === 'de' ? 'de-CH' : lang;
+    document.documentElement.lang = LANG_CODES[lang] ?? lang;
 
     // Aktiver Zustand der Sprach-Buttons
     document.querySelectorAll('.lang-btn').forEach((btn) => {
@@ -512,6 +524,13 @@
 
     // Formular-Feedback-Text im dynamischen State aktualisieren
     currentLang = lang;
+
+    // Nav-Toggle aria-label aktualisieren (sprachgerecht)
+    const toggle = document.querySelector('.nav-toggle');
+    if (toggle) {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-label', t(isOpen ? 'nav.menuClose' : 'nav.menuOpen', lang));
+    }
   };
 
   /**
@@ -553,7 +572,7 @@
       mainNav.classList.remove('open');
       mainNav.setAttribute('aria-hidden', desktopNavMedia.matches ? 'false' : 'true');
       navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.setAttribute('aria-label', t('nav.start', currentLang) === 'Start' ? 'Menü öffnen' : 'Open menu');
+      navToggle.setAttribute('aria-label', t('nav.menuOpen', currentLang));
       syncNavHeight();
     };
 
@@ -561,7 +580,7 @@
       mainNav.classList.add('open');
       mainNav.setAttribute('aria-hidden', 'false');
       navToggle.setAttribute('aria-expanded', 'true');
-      navToggle.setAttribute('aria-label', 'Menü schliessen');
+      navToggle.setAttribute('aria-label', t('nav.menuClose', currentLang));
       syncNavHeight();
     };
 
