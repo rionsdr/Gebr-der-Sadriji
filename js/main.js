@@ -513,7 +513,7 @@
     // Unterstützt nur <br> – wird sicher über DOM-Methoden gesetzt, kein innerHTML.
     document.querySelectorAll('[data-i18n-html]').forEach((el) => {
       const text  = t(el.getAttribute('data-i18n-html'), lang);
-      const parts = text.split(/\s*<br\s*\/?>\s*/i);
+      const parts = text.split(/\s*<br\s*\/?\s*>\s*/i);
       el.textContent = '';
       parts.forEach((part, i) => {
         el.appendChild(document.createTextNode(part));
