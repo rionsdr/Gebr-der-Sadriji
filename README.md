@@ -62,9 +62,15 @@ python3 -m http.server 8000
 
 ## Deployment mit GitHub Pages
 
-1. Repository → **Settings → Pages**
-2. Source: `Deploy from a branch`, Branch: `main`, Ordner: `/ (root)`
-3. Speichern – fertig.
+Das Deployment erfolgt deterministisch über den GitHub-Actions-Workflow
+`.github/workflows/deploy-pages.yml`. Dieser baut bei jedem Push auf `main`
+(oder manuell via *Run workflow*) den kompletten Repo-Root inkl. `CNAME` und
+`.nojekyll` und veröffentlicht ihn auf GitHub Pages. So liefert die Live-Seite
+immer exakt den aktuellen `main`-Stand aus.
+
+**Einmalige Einstellung:** Repository → **Settings → Pages** → *Build and
+deployment* → **Source: `GitHub Actions`** auswählen. Damit übernimmt der obige
+Workflow das Deployment (statt der älteren Branch-Quelle).
 
 ### Custom Domain (`www.gebrueder-sadriji.ch`)
 
