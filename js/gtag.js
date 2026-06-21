@@ -246,7 +246,7 @@
     banner.id = 'gs-consent-banner';
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-modal', 'false');
-    banner.setAttribute('aria-label', 'Cookie-Einstellungen');
+    banner.setAttribute('aria-labelledby', 'gs-consent-title');
 
     // Datenschutz-Link: relativ zur aktuellen Seite auflösen
     var pathname = window.location.pathname.replace(/\/+$/, '') || '/';
@@ -256,13 +256,15 @@
 
     banner.innerHTML =
       '<div class="gs-consent-inner">' +
-        '<p class="gs-consent-text">' +
-          'Diese Website verwendet Cookies. Notwendige Funktionen (z. B. Spracheinstellungen) ' +
-          'sind immer aktiv. Cookies für Marketing und Statistik (Google Tag, Google Ads) ' +
-          'aktivieren wir erst mit Ihrer Zustimmung. ' +
-          'Weitere Informationen in unserer ' +
-          '<a href="' + privacyPath + '" class="gs-consent-link">Datenschutzerklärung</a>.' +
-        '</p>' +
+        '<div class="gs-consent-copy">' +
+          '<p class="gs-consent-title" id="gs-consent-title">Cookie-Einstellungen</p>' +
+          '<p class="gs-consent-text">' +
+            'Wir verwenden notwendige Cookies für den Betrieb der Webseite. ' +
+            'Statistik- und Marketingdienste (Google Tag, Google Ads) werden nur mit Ihrer ' +
+            'Zustimmung aktiviert. Weitere Informationen in unserer ' +
+            '<a href="' + privacyPath + '" class="gs-consent-link">Datenschutzerklärung</a>.' +
+          '</p>' +
+        '</div>' +
         '<div class="gs-consent-actions">' +
           '<button id="gs-consent-reject" class="gs-consent-btn gs-consent-btn--secondary" type="button">Nur notwendige Cookies</button>' +
           '<button id="gs-consent-accept" class="gs-consent-btn gs-consent-btn--primary" type="button">Alle akzeptieren</button>' +
