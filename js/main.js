@@ -917,17 +917,21 @@
     });
 
     // E-Mail/Telefon: Invalid-Markierung beim Tippen zurücksetzen
-    [emailField, phoneField].forEach((field) => {
-      if (!field) return;
-      field.addEventListener('input', () => {
-        const emailVal = emailField ? emailField.value.trim() : '';
-        const phoneVal = phoneField ? phoneField.value.trim() : '';
-        if (emailVal || phoneVal) {
-          if (emailField && (!emailVal || emailField.checkValidity())) clearInvalidState(emailField);
-          if (phoneField) clearInvalidState(phoneField);
+    if (emailField) {
+      emailField.addEventListener('input', () => {
+        const hasValue = emailField.value.trim() !== '';
+        if (!hasValue || emailField.checkValidity()) clearInvalidState(emailField);
+        if (phoneField && phoneField.value.trim() !== '') clearInvalidState(phoneField);
+      });
+    }
+    if (phoneField) {
+      phoneField.addEventListener('input', () => {
+        if (phoneField.value.trim() !== '') {
+          clearInvalidState(phoneField);
+          if (emailField && emailField.value.trim() === '') clearInvalidState(emailField);
         }
       });
-    });
+    }
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -944,16 +948,14 @@
       const phoneValue = phoneField ? phoneField.value.trim() : '';
       let contactMissing = false;
 
-      if (emailField && phoneField && !emailValue && !phoneValue) {
+      if (!emailValue && !phoneValue) {
         formIsValid = false;
         contactMissing = true;
-        setInvalidState(emailField);
-        setInvalidState(phoneField);
+        if (emailField) setInvalidState(emailField);
+        if (phoneField) setInvalidState(phoneField);
       } else {
-        if (emailField && phoneField) {
-          if (phoneValue) clearInvalidState(phoneField);
-          if (emailValue) clearInvalidState(emailField);
-        }
+        if (emailField && emailValue) clearInvalidState(emailField);
+        if (phoneField && phoneValue) clearInvalidState(phoneField);
         // E-Mail-Format nur prüfen, wenn eine E-Mail eingegeben wurde
         if (emailField && emailValue && !emailField.checkValidity()) {
           formIsValid = false;
