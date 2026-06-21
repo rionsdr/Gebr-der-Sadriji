@@ -328,7 +328,11 @@ a { color: inherit; }
 .lang-switcher {
   display: flex;
   align-items: center;
-  gap: 2px;
+  gap: var(--space-2);
+  border-top: 1px solid var(--color-border-soft);
+  margin-top: var(--space-2);
+  padding: var(--space-3) var(--space-3) var(--space-2);
+  justify-content: flex-start;
 }
 .lang-btn {
   background: transparent;
@@ -354,14 +358,6 @@ a { color: inherit; }
   color: var(--color-accent);
   border-color: var(--color-accent);
   background: rgba(232, 101, 10, 0.07);
-}
-.lang-switcher-desktop { display: none; }
-.lang-switcher-mobile {
-  border-top: 1px solid var(--color-border-soft);
-  margin-top: var(--space-2);
-  padding: var(--space-3) var(--space-3) var(--space-2);
-  justify-content: flex-start;
-  gap: var(--space-2);
 }
 
 /* Header-CTA */
@@ -854,6 +850,19 @@ a { color: inherit; }
    TESTIMONIALS (vorbereitet, vorerst ausgeblendet)
 ================================================================ */
 .testimonial-grid { display: grid; gap: var(--space-5); }
+.references-note {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  max-width: 48rem;
+}
+.references-note p {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.65;
+}
 .testimonial-card {
   background: var(--color-surface);
   border-radius: var(--radius-lg);
@@ -1134,7 +1143,7 @@ a { color: inherit; }
 
   .main-nav {
     position: static;
-    display: block !important;
+    display: flex !important;
     grid-column: auto;
     overflow: visible;
     max-height: none;
@@ -1147,16 +1156,21 @@ a { color: inherit; }
     background: transparent;
     box-shadow: none;
     transition: none;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
   }
   .main-nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
     gap: var(--space-1);
+    padding: 0;
   }
-  .lang-switcher-mobile { display: none; }
-  .lang-switcher-desktop {
-    display: flex;
+  .lang-switcher {
+    border-top: 0;
+    margin-top: 0;
+    padding: 0;
     gap: 2px;
   }
   .header-cta { display: inline-flex; }
