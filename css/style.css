@@ -902,6 +902,7 @@ a { color: inherit; }
   letter-spacing: 0.01em;
 }
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
   width: 100%;
   border: 1.5px solid var(--color-border);
@@ -913,9 +914,11 @@ a { color: inherit; }
   color: var(--color-text);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
+.contact-form select { cursor: pointer; appearance: none; -webkit-appearance: none; -moz-appearance: none; padding-right: 2.4rem; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2367798a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; }
 .contact-form input::placeholder,
 .contact-form textarea::placeholder { color: var(--color-text-muted); }
 .contact-form input:focus-visible,
+.contact-form select:focus-visible,
 .contact-form textarea:focus-visible {
   outline: none;
   border-color: var(--color-accent);
@@ -923,12 +926,39 @@ a { color: inherit; }
   background: var(--color-surface);
 }
 .contact-form input:hover,
+.contact-form select:hover,
 .contact-form textarea:hover { border-color: var(--color-text-soft); }
 .contact-form .is-invalid {
   border-color: var(--color-danger);
   box-shadow: 0 0 0 3px rgba(212, 43, 43, 0.1);
 }
 .contact-form textarea { resize: vertical; min-height: 8rem; }
+.form-field-consent { margin-top: calc(-1 * var(--space-2)); }
+.form-consent {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem;
+  align-items: start;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: var(--color-text-soft);
+  cursor: pointer;
+  letter-spacing: normal;
+}
+.form-consent input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.15rem;
+  accent-color: var(--color-accent);
+  cursor: pointer;
+}
+.form-consent input[type="checkbox"].is-invalid {
+  outline: 2px solid var(--color-danger);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+.form-consent-text a { color: var(--color-accent); text-decoration: underline; }
 .form-feedback { min-height: 1.4rem; margin: 0; color: var(--color-text-soft); font-size: 0.92rem; font-weight: 500; }
 .form-feedback.is-success { color: var(--color-success); }
 .form-feedback.is-error   { color: var(--color-danger); }

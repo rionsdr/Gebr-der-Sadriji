@@ -15,14 +15,39 @@
     <link rel="manifest" href="assets/site.webmanifest" />
     <meta name="theme-color" content="#123047" />
 
+    <!-- LocalBusiness Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Gebrüder Sadriji",
+        "legalName": "Gebr. Sadriji Gipserarbeiten, Inhaber Skender Sadriji",
+        "url": "https://www.gebrueder-sadriji.ch/",
+        "telephone": "+41782558825",
+        "email": "kontakt@gebrueder-sadriji.ch",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Altwiesenstrasse 199",
+          "postalCode": "8051",
+          "addressLocality": "Zürich",
+          "addressCountry": "CH"
+        },
+        "areaServed": "Zürich und Umgebung",
+        "priceRange": "$$",
+        "description": "Maler-, Gipser-, Renovations-, Umbau-, Trockenbau- und Nassbauarbeiten in Zürich und Umgebung."
+      }
+    </script>
+
     <!-- Google Consent Mode v2 – Standardwerte (vor dem Google Tag gesetzt) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('consent', 'default', {
-        ad_storage:        'denied',
-        analytics_storage: 'denied',
-        wait_for_update:   500
+        ad_storage:         'denied',
+        analytics_storage:  'denied',
+        ad_user_data:       'denied',
+        ad_personalization: 'denied',
+        wait_for_update:    500
       });
     </script>
     <!-- Google tag (gtag.js) – AW-18241166068 -->
@@ -522,17 +547,73 @@
                     <input id="email" name="email" type="email" autocomplete="email" required data-i18n-placeholder="form.email.placeholder" placeholder="ihre@email.ch" />
                   </div>
                   <div class="form-field">
-                    <label for="telefon" data-i18n="form.phone">Telefon *</label>
-                    <input id="telefon" name="telefon" type="tel" autocomplete="tel" required placeholder="+41 78 255 88 25" />
+                    <label for="telefon" data-i18n="form.phone">Telefon</label>
+                    <input id="telefon" name="telefon" type="tel" autocomplete="tel" placeholder="+41 78 255 88 25" />
                   </div>
                 </div>
                 <div class="form-field">
                   <label for="betreff" data-i18n="form.subject">Betreff / Leistung *</label>
                   <input id="betreff" name="betreff" type="text" required data-i18n-placeholder="form.subject.placeholder" placeholder="z. B. Innenanstrich, Verputzarbeiten …" />
                 </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="ort" data-i18n="form.location">Ort / Objektadresse</label>
+                    <input id="ort" name="ort" type="text" autocomplete="street-address" data-i18n-placeholder="form.location.placeholder" placeholder="z. B. Musterstrasse 1, 8000 Zürich" />
+                  </div>
+                  <div class="form-field">
+                    <label for="zeitraum" data-i18n="form.period">Gewünschter Zeitraum</label>
+                    <input id="zeitraum" name="zeitraum" type="text" data-i18n-placeholder="form.period.placeholder" placeholder="z. B. ab August, flexibel …" />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="kundentyp" data-i18n="form.customerType">Kundentyp</label>
+                    <select id="kundentyp" name="kundentyp">
+                      <option value="" data-i18n="form.select.placeholder">Bitte wählen</option>
+                      <option value="Privatkunde" data-i18n="form.customerType.private">Privatkunde</option>
+                      <option value="Verwaltung" data-i18n="form.customerType.management">Verwaltung</option>
+                      <option value="Firma" data-i18n="form.customerType.company">Firma</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label for="objektart" data-i18n="form.objectType">Objektart</label>
+                    <select id="objektart" name="objektart">
+                      <option value="" data-i18n="form.select.placeholder">Bitte wählen</option>
+                      <option value="Wohnung" data-i18n="form.objectType.apartment">Wohnung</option>
+                      <option value="Haus" data-i18n="form.objectType.house">Haus</option>
+                      <option value="Büro" data-i18n="form.objectType.office">Büro</option>
+                      <option value="Gewerbe" data-i18n="form.objectType.commercial">Gewerbe</option>
+                      <option value="Baustelle" data-i18n="form.objectType.construction">Baustelle</option>
+                      <option value="Anderes" data-i18n="form.objectType.other">Anderes</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="umfang" data-i18n="form.scope">Ungefährer Umfang</label>
+                    <input id="umfang" name="umfang" type="text" data-i18n-placeholder="form.scope.placeholder" placeholder="z. B. 3.5-Zimmer-Wohnung, ca. 80 m² …" />
+                  </div>
+                  <div class="form-field">
+                    <label for="besichtigung" data-i18n="form.visit">Besichtigung gewünscht</label>
+                    <select id="besichtigung" name="besichtigung">
+                      <option value="" data-i18n="form.select.placeholder">Bitte wählen</option>
+                      <option value="Ja" data-i18n="form.visit.yes">Ja</option>
+                      <option value="Nein" data-i18n="form.visit.no">Nein</option>
+                    </select>
+                  </div>
+                </div>
                 <div class="form-field">
                   <label for="nachricht" data-i18n="form.message">Nachricht *</label>
                   <textarea id="nachricht" name="nachricht" rows="5" required data-i18n-placeholder="form.message.placeholder" placeholder="Beschreiben Sie kurz Ihr Vorhaben …"></textarea>
+                </div>
+                <div class="form-field form-field-consent">
+                  <label class="form-consent" for="datenschutz">
+                    <input id="datenschutz" name="datenschutz" type="checkbox" value="akzeptiert" required />
+                    <span class="form-consent-text">
+                      <span data-i18n="form.privacy">Ich habe die Datenschutzerklärung gelesen und bin mit der Bearbeitung meiner Angaben zur Beantwortung der Anfrage einverstanden. *</span>
+                      <a href="/datenschutz/" target="_blank" rel="noopener" data-i18n="form.privacy.link">Datenschutzerklärung</a>
+                    </span>
+                  </label>
                 </div>
                 <button class="btn btn-primary btn-large" type="submit">
                   <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
