@@ -1154,6 +1154,7 @@ a { color: inherit; }
     margin-right: auto;
   }
   .lang-switcher-desktop {
+    display: flex;
     margin-left: var(--space-5);
     margin-right: var(--space-2);
     flex-shrink: 0;
