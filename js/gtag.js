@@ -159,7 +159,8 @@
    * @param {string} location – Herkunftsbereich (floating_button | contact_section | header | footer | page)
    */
   window.trackPhoneClick = function (location, href) {
-    var value = String(href || '').replace(/^tel:/i, '') || undefined;
+    var normalizedHref = typeof href === 'string' ? href : '';
+    var value = normalizedHref.replace(/^tel:/i, '') || undefined;
     trackEvent('phone_click', {
       method:        'phone',
       link_type:     'phone',
@@ -191,7 +192,8 @@
    * @param {string} location – Herkunftsbereich
    */
   window.trackEmailClick = function (location, href) {
-    var value = String(href || '').replace(/^mailto:/i, '') || undefined;
+    var normalizedHref = typeof href === 'string' ? href : '';
+    var value = normalizedHref.replace(/^mailto:/i, '') || undefined;
     trackEvent('email_click', {
       method:        'email',
       link_type:     'email',

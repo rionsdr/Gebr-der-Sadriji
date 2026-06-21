@@ -1143,7 +1143,7 @@ a { color: inherit; }
 
   .main-nav {
     position: static;
-    display: flex !important;
+    display: flex;
     grid-column: auto;
     overflow: visible;
     max-height: none;
