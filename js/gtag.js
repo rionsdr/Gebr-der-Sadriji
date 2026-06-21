@@ -160,7 +160,8 @@
    */
   window.trackPhoneClick = function (location, href) {
     var normalizedHref = typeof href === 'string' ? href : '';
-    var value = normalizedHref.replace(/^tel:/i, '') || undefined;
+    var value = normalizedHref.replace(/^tel:/i, '');
+    if (!value) value = undefined;
     trackEvent('phone_click', {
       method:        'phone',
       link_type:     'phone',
@@ -193,7 +194,8 @@
    */
   window.trackEmailClick = function (location, href) {
     var normalizedHref = typeof href === 'string' ? href : '';
-    var value = normalizedHref.replace(/^mailto:/i, '') || undefined;
+    var value = normalizedHref.replace(/^mailto:/i, '');
+    if (!value) value = undefined;
     trackEvent('email_click', {
       method:        'email',
       link_type:     'email',
