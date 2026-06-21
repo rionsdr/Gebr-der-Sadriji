@@ -334,6 +334,7 @@ a { color: inherit; }
   padding: var(--space-3) var(--space-3) var(--space-2);
   justify-content: flex-start;
 }
+.lang-switcher-desktop { display: none; }
 .lang-btn {
   background: transparent;
   border: 1px solid transparent;
@@ -1112,7 +1113,8 @@ a { color: inherit; }
     padding: 0;
     gap: 2px;
   }
-  .header-cta { display: inline-flex; }
+  .lang-switcher-mobile { display: none; }
+  .lang-switcher-desktop { display: flex; }
 
   .hero-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-12); }
 
@@ -1132,6 +1134,19 @@ a { color: inherit; }
    RESPONSIVE – DESKTOP (≥ 64rem / 1024px)
 ================================================================ */
 @media (min-width: 64rem) {
+  .header-cta { display: inline-flex; }
+  .main-nav {
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-end;
+  }
+  .main-nav ul {
+    margin-right: auto;
+  }
+  .main-nav .lang-switcher {
+    margin-left: var(--space-4);
+    flex-shrink: 0;
+  }
   .steps-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .usp-grid   { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .floating-call-text { display: inline; }
