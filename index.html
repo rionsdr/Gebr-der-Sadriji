@@ -560,14 +560,15 @@
                 </div>
                 <div class="form-row">
                   <div class="form-field">
-                    <label for="email" data-i18n="form.email">E-Mail *</label>
-                    <input id="email" name="email" type="email" autocomplete="email" required data-i18n-placeholder="form.email.placeholder" placeholder="ihre@email.ch" />
+                    <label for="email" data-i18n="form.email">E-Mail</label>
+                    <input id="email" name="email" type="email" autocomplete="email" data-i18n-placeholder="form.email.placeholder" placeholder="ihre@email.ch" />
                   </div>
                   <div class="form-field">
                     <label for="telefon" data-i18n="form.phone">Telefon</label>
                     <input id="telefon" name="telefon" type="tel" autocomplete="tel" placeholder="+41 78 255 88 25" />
                   </div>
                 </div>
+                <p class="form-hint" data-i18n="form.contactHint">Bitte geben Sie mindestens E-Mail oder Telefon an, damit wir Sie erreichen können.</p>
                 <div class="form-field">
                   <label for="betreff" data-i18n="form.subject">Betreff / Leistung *</label>
                   <input id="betreff" name="betreff" type="text" required data-i18n-placeholder="form.subject.placeholder" placeholder="z. B. Innenanstrich, Verputzarbeiten …" />
@@ -616,6 +617,7 @@
                       <option value="" data-i18n="form.select.placeholder">Bitte wählen</option>
                       <option value="Ja" data-i18n="form.visit.yes">Ja</option>
                       <option value="Nein" data-i18n="form.visit.no">Nein</option>
+                      <option value="Noch offen" data-i18n="form.visit.open">Noch offen</option>
                     </select>
                   </div>
                 </div>
