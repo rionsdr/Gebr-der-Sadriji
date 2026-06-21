@@ -11,7 +11,7 @@
     if (!eventName) return;
     window.dataLayer = window.dataLayer || [];
     const payload =
-      data && typeof data === 'object'
+      data && typeof data === 'object' && !Array.isArray(data)
         ? { event: eventName, ...data }
         : { event: eventName };
     window.dataLayer.push(payload);
