@@ -334,6 +334,7 @@ a { color: inherit; }
   padding: var(--space-3) var(--space-3) var(--space-2);
   justify-content: flex-start;
 }
+.lang-switcher-mobile { display: flex; }
 .lang-switcher-desktop { display: none; }
 .lang-btn {
   background: transparent;
