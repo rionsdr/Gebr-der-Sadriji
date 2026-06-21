@@ -62,6 +62,8 @@
   --font-base: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --container-max: 72rem;
   --header-height: 5rem;
+  /* Approximately 1cm left shift at 96 DPI */
+  --desktop-nav-left-shift: 37.8px;
 }
 
 /* ================================================================
@@ -1150,9 +1152,9 @@ a { color: inherit; }
     position: relative;
   }
   .header-cta { display: inline-flex; }
-  .main-nav {
+  :is(.main-nav, .main-nav.open) {
     position: absolute;
-    left: 50%;
+    left: calc(50% - var(--desktop-nav-left-shift));
     top: 50%;
     transform: translate(-50%, -50%);
     width: max-content;
