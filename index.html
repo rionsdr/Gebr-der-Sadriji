@@ -130,13 +130,19 @@
           </ul>
 
           <!-- Language Switcher -->
-          <div class="lang-switcher" role="navigation" aria-label="Sprache wählen">
+          <div class="lang-switcher lang-switcher-mobile" role="navigation" aria-label="Sprache wählen">
             <button class="lang-btn" data-lang="de" aria-label="Deutsch" title="Deutsch">DE</button>
             <button class="lang-btn" data-lang="en" aria-label="English" title="English">EN</button>
             <button class="lang-btn" data-lang="fr" aria-label="Français" title="Français">FR</button>
             <button class="lang-btn" data-lang="it" aria-label="Italiano" title="Italiano">IT</button>
           </div>
         </nav>
+        <div class="lang-switcher lang-switcher-desktop" role="navigation" aria-label="Sprache wählen">
+          <button class="lang-btn" data-lang="de" aria-label="Deutsch" title="Deutsch">DE</button>
+          <button class="lang-btn" data-lang="en" aria-label="English" title="English">EN</button>
+          <button class="lang-btn" data-lang="fr" aria-label="Français" title="Français">FR</button>
+          <button class="lang-btn" data-lang="it" aria-label="Italiano" title="Italiano">IT</button>
+        </div>
 
         <a class="header-cta" href="#kontakt" data-i18n="nav.cta">
           <!-- Anfrage-Icon -->
@@ -583,7 +589,6 @@
                       <option value="" data-i18n="form.select.placeholder">Bitte wählen</option>
                       <option value="Ja, bitte Termin vereinbaren" data-i18n="form.visit.yes">Ja, bitte Termin vereinbaren</option>
                       <option value="Nein, zuerst grobe Einschätzung" data-i18n="form.visit.no">Nein, zuerst grobe Einschätzung</option>
-                      <option value="Noch offen" data-i18n="form.visit.open">Noch offen</option>
                     </select>
                     <p class="form-hint" data-i18n="form.visit.hint">Für eine verbindliche Offerte ist in der Regel eine Besichtigung oder eine genaue Projektbeschreibung erforderlich.</p>
                   </div>
