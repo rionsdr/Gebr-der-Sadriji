@@ -24,6 +24,7 @@
   var CONVERSION_LABEL_WHATSAPP     = 'REPLACE_WITH_WHATSAPP_CONVERSION_LABEL';
 
   var CONSENT_STORAGE_KEY = 'cookieConsent';
+  var LEGACY_CONSENT_KEY  = 'gs_consent_v1';
   var CONSENT_ACCEPTED    = 'accepted';
   var CONSENT_NECESSARY   = 'necessary';
 
@@ -84,7 +85,20 @@
   /** Gespeicherte Einwilligung lesen */
   function getStoredConsent() {
     try {
-      return localStorage.getItem(CONSENT_STORAGE_KEY);
+      var stored = localStorage.getItem(CONSENT_STORAGE_KEY);
+      if (stored === CONSENT_ACCEPTED || stored === CONSENT_NECESSARY) return stored;
+
+      var legacy = localStorage.getItem(LEGACY_CONSENT_KEY);
+      if (legacy === 'granted') {
+        localStorage.setItem(CONSENT_STORAGE_KEY, CONSENT_ACCEPTED);
+        return CONSENT_ACCEPTED;
+      }
+      if (legacy === 'denied') {
+        localStorage.setItem(CONSENT_STORAGE_KEY, CONSENT_NECESSARY);
+        return CONSENT_NECESSARY;
+      }
+
+      return null;
     } catch (_) {
       return null;
     }
@@ -144,9 +158,10 @@
    * Telefon-Klick
    * @param {string} location – Herkunftsbereich (floating_button | contact_section | header | footer | page)
    */
-  window.trackPhoneClick = function (location) {
-    var value = '+41782558825';
+  window.trackPhoneClick = function (location, href) {
+    var value = String(href || '').replace(/^tel:/i, '') || undefined;
     trackEvent('phone_click', {
+      method:        'phone',
       link_type:     'phone',
       value:         value,
       location:      location || 'unknown',
@@ -162,6 +177,7 @@
    */
   window.trackWhatsappClick = function (location) {
     trackEvent('whatsapp_click', {
+      method:        'whatsapp',
       link_type:     'whatsapp',
       location:      location || 'unknown',
       page_location: window.location.href
@@ -174,9 +190,10 @@
    * E-Mail-Klick
    * @param {string} location – Herkunftsbereich
    */
-  window.trackEmailClick = function (location) {
-    var value = 'kontakt@gebrueder-sadriji.ch';
+  window.trackEmailClick = function (location, href) {
+    var value = String(href || '').replace(/^mailto:/i, '') || undefined;
     trackEvent('email_click', {
+      method:        'email',
       link_type:     'email',
       value:         value,
       location:      location || 'unknown',
@@ -213,9 +230,9 @@
       var loc  = detectLinkLocation(anchor);
 
       if (href.startsWith('tel:')) {
-        window.trackPhoneClick(loc);
+        window.trackPhoneClick(loc, href);
       } else if (href.startsWith('mailto:')) {
-        window.trackEmailClick(loc);
+        window.trackEmailClick(loc, href);
       } else if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) {
         window.trackWhatsappClick(loc);
       }
