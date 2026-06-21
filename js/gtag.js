@@ -23,17 +23,22 @@
   var CONVERSION_LABEL_PHONE        = 'REPLACE_WITH_PHONE_CONVERSION_LABEL';
   var CONVERSION_LABEL_WHATSAPP     = 'REPLACE_WITH_WHATSAPP_CONVERSION_LABEL';
 
-  var CONSENT_STORAGE_KEY = 'gs_consent_v1';
+  var CONSENT_STORAGE_KEY = 'cookieConsent';
+  var CONSENT_ACCEPTED    = 'accepted';
+  var CONSENT_NECESSARY   = 'necessary';
 
   /* ================================================================
      HILFSFUNKTIONEN
   ================================================================ */
 
-  /** Sicherer gtag-Wrapper – feuert nur, wenn window.gtag verfügbar ist */
+  /** Sicherer gtag-Wrapper – fällt auf dataLayer-Push zurück, falls gtag noch nicht verfügbar ist */
   function gtagSend() {
+    window.dataLayer = window.dataLayer || [];
     if (typeof window.gtag === 'function') {
       window.gtag.apply(window, arguments);
+      return;
     }
+    window.dataLayer.push(Array.prototype.slice.call(arguments));
   }
 
   /**
@@ -47,6 +52,24 @@
       window.dataLayer.push(payload);
     } catch (_) { /* still und robust */ }
   }
+
+  /**
+   * Robuste Standard-Hilfsfunktion für dataLayer-Events
+   * @param {string} eventName
+   * @param {Object} data
+   */
+  function pushDataLayerEvent(eventName, data) {
+    var payload = { event: eventName };
+    var details = data || {};
+    for (var key in details) {
+      if (Object.prototype.hasOwnProperty.call(details, key)) {
+        payload[key] = details[key];
+      }
+    }
+    dataLayerPush(payload);
+  }
+
+  window.pushDataLayerEvent = pushDataLayerEvent;
 
   /** Consent Mode v2 aktualisieren */
   function updateConsent(granted) {
@@ -81,14 +104,7 @@
   /** Generisches Event-Tracking – pusht in den dataLayer (GTM) und feuert gtag */
   function trackEvent(eventName, params) {
     var data = params || {};
-    // GTM-kompatibles Event im dataLayer (für Google Tag Manager Trigger)
-    var payload = { event: eventName };
-    for (var key in data) {
-      if (Object.prototype.hasOwnProperty.call(data, key)) {
-        payload[key] = data[key];
-      }
-    }
-    dataLayerPush(payload);
+    pushDataLayerEvent(eventName, data);
     // Direkter gtag-Event (für Google Ads / gtag.js), falls verfügbar
     gtagSend('event', eventName, data);
   }
@@ -116,7 +132,6 @@
    */
   window.trackContactFormSubmit = function () {
     trackEvent('contact_form_submit', {
-      method:        'contact_form',
       form_name:     'Offertanfrage',
       page_location: window.location.href,
       page_title:    document.title
@@ -130,8 +145,10 @@
    * @param {string} location – Herkunftsbereich (floating_button | contact_section | header | footer | page)
    */
   window.trackPhoneClick = function (location) {
+    var value = '+41782558825';
     trackEvent('phone_click', {
-      method:        'phone',
+      link_type:     'phone',
+      value:         value,
       location:      location || 'unknown',
       page_location: window.location.href
     });
@@ -145,7 +162,7 @@
    */
   window.trackWhatsappClick = function (location) {
     trackEvent('whatsapp_click', {
-      method:        'whatsapp',
+      link_type:     'whatsapp',
       location:      location || 'unknown',
       page_location: window.location.href
     });
@@ -158,8 +175,10 @@
    * @param {string} location – Herkunftsbereich
    */
   window.trackEmailClick = function (location) {
+    var value = 'kontakt@gebrueder-sadriji.ch';
     trackEvent('email_click', {
-      method:        'email',
+      link_type:     'email',
+      value:         value,
       location:      location || 'unknown',
       page_location: window.location.href
     });
@@ -260,10 +279,9 @@
           '<p class="gs-consent-title" id="gs-consent-title">Cookie-Einstellungen</p>' +
           '<p class="gs-consent-text">' +
             'Wir verwenden notwendige Cookies für den Betrieb der Webseite. ' +
-            'Statistik- und Marketingdienste (Google Tag, Google Ads) werden nur mit Ihrer ' +
-            'Zustimmung aktiviert. Weitere Informationen in unserer ' +
-            '<a href="' + privacyPath + '" class="gs-consent-link">Datenschutzerklärung</a>.' +
+            'Statistik- und Marketingdienste werden nur mit Ihrer Zustimmung aktiviert.' +
           '</p>' +
+          '<a href="' + privacyPath + '" class="gs-consent-link">Datenschutzerklärung</a>' +
         '</div>' +
         '<div class="gs-consent-actions">' +
           '<button id="gs-consent-reject" class="gs-consent-btn gs-consent-btn--secondary" type="button">Nur notwendige Cookies</button>' +
@@ -281,13 +299,13 @@
     });
 
     document.getElementById('gs-consent-accept').addEventListener('click', function () {
-      storeConsent('granted');
+      storeConsent(CONSENT_ACCEPTED);
       updateConsent(true);
       hideBanner(banner);
     });
 
     document.getElementById('gs-consent-reject').addEventListener('click', function () {
-      storeConsent('denied');
+      storeConsent(CONSENT_NECESSARY);
       updateConsent(false);
       hideBanner(banner);
     });
@@ -319,9 +337,9 @@
   function init() {
     var stored = getStoredConsent();
 
-    if (stored === 'granted') {
+    if (stored === CONSENT_ACCEPTED) {
       updateConsent(true);
-    } else if (stored === 'denied') {
+    } else if (stored === CONSENT_NECESSARY) {
       // Consent bleibt denied (Standard aus Head-Snippet)
       updateConsent(false);
     } else {
