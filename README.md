@@ -66,6 +66,12 @@ python3 -m http.server 8000
 2. Source: `Deploy from a branch`, Branch: `main`, Ordner: `/ (root)`
 3. Speichern – fertig.
 
+### Custom Domain (`www.gebrueder-sadriji.ch`)
+
+- Die Datei `CNAME` im Repo-Root bindet die Custom-Domain dauerhaft an das GitHub-Pages-Deployment aus `main`. Sie muss erhalten bleiben, sonst kann die Domain-Bindung bei einem Redeploy verloren gehen und die Live-Seite über DNS (GoDaddy) eine alte/fremde Version ausliefern.
+- Die leere Datei `.nojekyll` deaktiviert die Jekyll-Verarbeitung, sodass GitHub Pages alle Dateien exakt wie im `main`-Branch ausliefert.
+- DNS (GoDaddy): `www` als `CNAME` auf `<user>.github.io`, Apex-Domain via `A`-Records auf die GitHub-Pages-IPs. Nach Deployments kann der Fastly-CDN-/Browser-Cache kurzzeitig alte Inhalte zeigen (Hard-Reload bzw. wenige Minuten warten).
+
 ---
 
 ## Wichtige Anpassungspunkte (Platzhalter ersetzen)
