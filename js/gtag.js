@@ -36,11 +36,25 @@
     }
   }
 
+  /**
+   * Robustes Pushen eines Events in den dataLayer (für Google Tag Manager).
+   * Funktioniert auch, wenn GTM noch nicht geladen ist, und wirft keine Fehler.
+   * @param {Object} payload – Objekt mit mindestens einem `event`-Schlüssel
+   */
+  function dataLayerPush(payload) {
+    try {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+    } catch (_) { /* still und robust */ }
+  }
+
   /** Consent Mode v2 aktualisieren */
   function updateConsent(granted) {
     gtagSend('consent', 'update', {
-      ad_storage:        granted ? 'granted' : 'denied',
-      analytics_storage: granted ? 'granted' : 'denied'
+      ad_storage:         granted ? 'granted' : 'denied',
+      analytics_storage:  granted ? 'granted' : 'denied',
+      ad_user_data:       granted ? 'granted' : 'denied',
+      ad_personalization: granted ? 'granted' : 'denied'
     });
   }
 
@@ -64,9 +78,19 @@
      TRACKING-FUNKTIONEN (global verfügbar für main.js)
   ================================================================ */
 
-  /** Generisches Event-Tracking */
+  /** Generisches Event-Tracking – pusht in den dataLayer (GTM) und feuert gtag */
   function trackEvent(eventName, params) {
-    gtagSend('event', eventName, params || {});
+    var data = params || {};
+    // GTM-kompatibles Event im dataLayer (für Google Tag Manager Trigger)
+    var payload = { event: eventName };
+    for (var key in data) {
+      if (Object.prototype.hasOwnProperty.call(data, key)) {
+        payload[key] = data[key];
+      }
+    }
+    dataLayerPush(payload);
+    // Direkter gtag-Event (für Google Ads / gtag.js), falls verfügbar
+    gtagSend('event', eventName, data);
   }
 
   /** Conversion-Tracking */
@@ -93,6 +117,7 @@
   window.trackContactFormSubmit = function () {
     trackEvent('contact_form_submit', {
       method:        'contact_form',
+      form_name:     'Offertanfrage',
       page_location: window.location.href,
       page_title:    document.title
     });
@@ -232,14 +257,15 @@
     banner.innerHTML =
       '<div class="gs-consent-inner">' +
         '<p class="gs-consent-text">' +
-          'Diese Website verwendet Google Tag und Google Ads für Marketing-Tracking und Analysen. ' +
-          'Funktionale Cookies (z. B. Spracheinstellungen) sind immer aktiv. ' +
+          'Diese Website verwendet Cookies. Notwendige Funktionen (z. B. Spracheinstellungen) ' +
+          'sind immer aktiv. Cookies für Marketing und Statistik (Google Tag, Google Ads) ' +
+          'aktivieren wir erst mit Ihrer Zustimmung. ' +
           'Weitere Informationen in unserer ' +
           '<a href="' + privacyPath + '" class="gs-consent-link">Datenschutzerklärung</a>.' +
         '</p>' +
         '<div class="gs-consent-actions">' +
-          '<button id="gs-consent-reject" class="gs-consent-btn gs-consent-btn--secondary" type="button">Ablehnen</button>' +
-          '<button id="gs-consent-accept" class="gs-consent-btn gs-consent-btn--primary" type="button">Akzeptieren</button>' +
+          '<button id="gs-consent-reject" class="gs-consent-btn gs-consent-btn--secondary" type="button">Nur notwendige Cookies</button>' +
+          '<button id="gs-consent-accept" class="gs-consent-btn gs-consent-btn--primary" type="button">Alle akzeptieren</button>' +
         '</div>' +
       '</div>';
 
