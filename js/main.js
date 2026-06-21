@@ -28,7 +28,7 @@
     pushDataLayerEvent('phone_click', {
       link_type: 'phone',
       value,
-      ...(location ? { location } : {})
+      location
     });
   };
   window.trackWhatsappClick = function () {
@@ -41,7 +41,7 @@
     pushDataLayerEvent('email_click', {
       link_type: 'email',
       value,
-      ...(location ? { location } : {})
+      location
     });
   };
 
