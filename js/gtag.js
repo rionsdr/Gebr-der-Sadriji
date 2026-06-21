@@ -91,10 +91,12 @@
       var legacy = localStorage.getItem(LEGACY_CONSENT_KEY);
       if (legacy === 'granted') {
         localStorage.setItem(CONSENT_STORAGE_KEY, CONSENT_ACCEPTED);
+        localStorage.removeItem(LEGACY_CONSENT_KEY);
         return CONSENT_ACCEPTED;
       }
       if (legacy === 'denied') {
         localStorage.setItem(CONSENT_STORAGE_KEY, CONSENT_NECESSARY);
+        localStorage.removeItem(LEGACY_CONSENT_KEY);
         return CONSENT_NECESSARY;
       }
 
