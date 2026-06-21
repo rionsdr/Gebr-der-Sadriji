@@ -1376,6 +1376,15 @@ a { color: inherit; }
   gap: 1.25rem;
   flex-wrap: wrap;
 }
+.gs-consent-copy {
+  flex: 1 1 20rem;
+}
+.gs-consent-title {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
 .gs-consent-text {
   flex: 1 1 20rem;
   margin: 0;
