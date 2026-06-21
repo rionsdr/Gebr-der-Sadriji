@@ -29,7 +29,7 @@
       'hero.card.fact1':             'Firmenbestehen seit 2006',
       'hero.card.fact2':             'Fachkräfte mit jahrzehntelanger Erfahrung',
       'hero.card.fact3':             '8 Mitarbeitende',
-      'trust.experience':            'Über 40 Jahre Erfahrung',
+      'trust.experience':            'Jahrzehntelange Erfahrung',
       'trust.quality':               'Hochwertige Materialien',
       'trust.punctual':              'Termingerecht & sauber',
       'trust.reachable':             '24/7 telefonisch erreichbar',
@@ -98,9 +98,10 @@
       'contact.whatsapp':            'WhatsApp Business schreiben',
       'form.name':                   'Name *',
       'form.name.placeholder':       'Ihr vollständiger Name',
-      'form.email':                  'E-Mail *',
+      'form.email':                  'E-Mail',
       'form.email.placeholder':      'ihre@email.ch',
       'form.phone':                  'Telefon',
+      'form.contactHint':            'Bitte geben Sie mindestens E-Mail oder Telefon an, damit wir Sie erreichen können.',
       'form.subject':                'Betreff / Leistung *',
       'form.subject.placeholder':    'z. B. Innenanstrich, Verputzarbeiten …',
       'form.message':                'Nachricht *',
@@ -125,14 +126,16 @@
       'form.visit':                  'Besichtigung gewünscht',
       'form.visit.yes':              'Ja',
       'form.visit.no':               'Nein',
+      'form.visit.open':             'Noch offen',
       'form.select.placeholder':     'Bitte wählen',
       'form.privacy':                'Ich habe die Datenschutzerklärung gelesen und bin mit der Bearbeitung meiner Angaben zur Beantwortung der Anfrage einverstanden. *',
       'form.privacy.link':           'Datenschutzerklärung',
       'form.submit':                 'Anfrage senden',
       'form.sending':                'Wird gesendet …',
-      'form.success':                'Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt. Wir melden uns zeitnah bei Ihnen.',
+      'form.success':                'Vielen Dank für Ihre Anfrage. Wir haben Ihre Angaben erhalten und melden uns so schnell wie möglich bei Ihnen.',
       'form.error.fields':           'Bitte füllen Sie alle Pflichtfelder korrekt aus.',
-      'form.error.send':             'Senden aktuell nicht möglich. Bitte kontaktieren Sie uns alternativ telefonisch unter +41 78 255 88 25.',
+      'form.error.contact':          'Bitte geben Sie mindestens eine E-Mail-Adresse oder eine Telefonnummer an.',
+      'form.error.send':             'Die Anfrage konnte leider nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt telefonisch unter +41 78 255 88 25.',
       'form.mailOpened':             'Ihr Mailprogramm wurde geöffnet. Bitte Nachricht senden, um die Anfrage abzuschliessen.',
       'footer.tagline':              'Maler- und Gipserarbeiten<br><br>Gebr. Sadriji Gipserarbeiten, Inhaber Skender Sadriji<br>Altwiesenstrasse 199, 8051 Zürich, Schweiz · UID CHE-113.308.264',
       'footer.navTitle':             'Navigation',
@@ -145,7 +148,7 @@
       'floatingBtn.text':            'Jetzt anrufen',
       'nav.menuOpen':                'Menü öffnen',
       'nav.menuClose':               'Menü schliessen',
-      'meta.description':            'Gebrüder Sadriji aus Zürich: Maler- und Gipserarbeiten in Schweizer Qualität. 40+ Jahre Erfahrung. Kostenlose Anfrage senden oder telefonisch kontaktieren.',
+      'meta.description':            'Gebrüder Sadriji aus Zürich: Maler-, Gipser-, Renovations-, Umbau-, Trockenbau- und Nassbauarbeiten in Schweizer Qualität. Fachkräfte mit jahrzehntelanger Erfahrung. Kostenlose Offerte anfragen oder telefonisch kontaktieren.',
       'form.email.subject':          'Neue Anfrage über die Website Gebrüder Sadriji',
     },
 
@@ -163,30 +166,30 @@
       'hero.cta.primary':            'Free enquiry',
       'hero.cta.call':               'Call now',
       'hero.card.label':             'Your company at a glance',
-      'hero.card.fact1':             '19 years in business',
-      'hero.card.fact2':             'Over 40 years of experience',
+      'hero.card.fact1':             'In business since 2006',
+      'hero.card.fact2':             'Skilled professionals with decades of experience',
       'hero.card.fact3':             '8 employees',
-      'trust.experience':            'Over 40 years of experience',
+      'trust.experience':            'Decades of experience',
       'trust.quality':               'Swiss quality',
       'trust.punctual':              'On time & clean',
       'trust.reachable':             'Available 24/7 by phone',
       'about.eyebrow':               'About us',
-      'about.title':                 '19 years as your reliable<br>partner in Zurich',
-      'about.intro':                 'Gebrüder Sadriji stands for high-quality painting and plastering work in Zurich. With over 40 years of team experience, we deliver projects cleanly, efficiently and to Swiss standards – from initial consultation to final handover.',
+      'about.title':                 'Your reliable partner for painting and plastering in Zurich',
+      'about.intro':                 'Gebrüder Sadriji is a Zurich-based specialist for painting, plastering, renovation and conversion work. We combine craftsmanship with a well-organised approach and handle projects from a single room to comprehensive refurbishments.',
       'stats.experience':            'Years of experience',
       'stats.founded':               'Years in business',
       'stats.employees':             'Employees',
       'usp.eyebrow':                 'Our strengths',
       'usp.title':                   'Why Gebrüder Sadriji?',
-      'usp.intro':                   'What sets us apart from other companies – and why clients have relied on us for years.',
-      'usp.card1.title':             '40+ years of experience',
-      'usp.card1.text':              'Our team brings over 40 years of accumulated expertise in painting and plastering – delivering the optimal solution for every project.',
+      'usp.intro':                   'What sets us apart from other companies – and why clients choose Gebrüder Sadriji.',
+      'usp.card1.title':             'A strong team through diverse expertise',
+      'usp.card1.text':              'Quality is created when competencies are used purposefully. Our team combines experienced specialists with different strengths, sound know-how and craftsmanship. This is how we deliver every project efficiently, precisely and to a high standard of quality.',
       'usp.card2.title':             'Swiss quality',
       'usp.card2.text':              'We work exclusively with premium materials and to Swiss standards – visible in every brushstroke and every surface.',
-      'usp.card3.title':             'Reliable & on schedule',
-      'usp.card3.text':              'Clear agreements, punctual execution and transparent communication from first contact to handover.',
-      'usp.card4.title':             'Personal service',
-      'usp.card4.text':              'A family business with direct contact – no call centre, no transfers. You always speak with the people doing your work.',
+      'usp.card3.title':             'Versatile areas of expertise',
+      'usp.card3.text':              'We cover a wide range of painting, plastering, renovation and conversion work – tailored to each individual project.',
+      'usp.card4.title':             'Enquiries directly with us',
+      'usp.card4.text':              'Phone and written enquiries are received personally and forwarded internally to the right specialist.',
       'services.eyebrow':            'What we offer',
       'services.title':              'Our services',
       'services.intro':              'Individual solutions for residential, commercial and conversion projects in Zurich and the surrounding area.',
@@ -235,9 +238,10 @@
       'contact.whatsapp':            'Write via WhatsApp Business',
       'form.name':                   'Name *',
       'form.name.placeholder':       'Your full name',
-      'form.email':                  'Email *',
+      'form.email':                  'Email',
       'form.email.placeholder':      'your@email.ch',
       'form.phone':                  'Phone',
+      'form.contactHint':            'Please provide at least an email address or a phone number so we can reach you.',
       'form.subject':                'Subject / service *',
       'form.subject.placeholder':    'e.g. interior painting, plastering …',
       'form.message':                'Message *',
@@ -262,14 +266,16 @@
       'form.visit':                  'On-site visit desired',
       'form.visit.yes':              'Yes',
       'form.visit.no':               'No',
+      'form.visit.open':             'Still open',
       'form.select.placeholder':     'Please select',
       'form.privacy':                'I have read the privacy policy and consent to my details being processed to respond to my enquiry. *',
       'form.privacy.link':           'Privacy policy',
       'form.submit':                 'Send enquiry',
       'form.sending':                'Sending …',
-      'form.success':                'Thank you! Your enquiry has been submitted successfully. We will be in touch shortly.',
+      'form.success':                'Thank you for your enquiry. We have received your details and will get back to you as soon as possible.',
       'form.error.fields':           'Please fill in all required fields correctly.',
-      'form.error.send':             'Sending is currently unavailable. Please contact us by phone on +41 78 255 88 25.',
+      'form.error.contact':          'Please provide at least an email address or a phone number.',
+      'form.error.send':             'Unfortunately your enquiry could not be sent. Please try again or contact us directly by phone on +41 78 255 88 25.',
       'form.mailOpened':             'Your mail application has opened. Please send the message to complete your enquiry.',
       'footer.tagline':              'Painting & plastering<br><br>Gebr. Sadriji Gipserarbeiten, Inhaber Skender Sadriji<br>Altwiesenstrasse 199, 8051 Zürich, Schweiz · UID CHE-113.308.264',
       'footer.navTitle':             'Navigation',
@@ -282,7 +288,7 @@
       'floatingBtn.text':            'Call now',
       'nav.menuOpen':                'Open menu',
       'nav.menuClose':               'Close menu',
-      'meta.description':            'Gebrüder Sadriji – Zürich: Painting and plastering in Swiss quality. 40+ years of experience. Request a free quote or call us any time.',
+      'meta.description':            'Gebrüder Sadriji – Zurich: painting, plastering, renovation, conversion, drywall and masonry work in Swiss quality. Skilled professionals with decades of experience. Request a free quote or call us any time.',
       'form.email.subject':          'New enquiry via the Gebrüder Sadriji website',
     },
 
@@ -300,30 +306,30 @@
       'hero.cta.primary':            'Demande gratuite',
       'hero.cta.call':               'Appeler maintenant',
       'hero.card.label':             'Votre entreprise en un coup d\'œil',
-      'hero.card.fact1':             '19 ans d\'existence',
-      'hero.card.fact2':             'Plus de 40 ans d\'expérience',
+      'hero.card.fact1':             'En activité depuis 2006',
+      'hero.card.fact2':             'Des professionnels qualifiés forts de décennies d\'expérience',
       'hero.card.fact3':             '8 collaborateurs',
-      'trust.experience':            'Plus de 40 ans d\'expérience',
+      'trust.experience':            'Des décennies d\'expérience',
       'trust.quality':               'Qualité suisse',
       'trust.punctual':              'Dans les délais & propre',
       'trust.reachable':             'Disponible 24h/24 par téléphone',
       'about.eyebrow':               'À propos',
-      'about.title':                 '19 ans à vos côtés comme<br>partenaire fiable à Zurich',
-      'about.intro':                 'Gebrüder Sadriji est synonyme de travaux de peinture et de plâtrerie de haute qualité à Zurich. Avec plus de 40 ans d\'expérience au sein de l\'équipe, nous réalisons vos projets avec soin, efficacité et selon les standards suisses – de la première consultation jusqu\'à la réception finale.',
+      'about.title':                 'Votre partenaire fiable pour la peinture et la plâtrerie à Zurich',
+      'about.intro':                 'Gebrüder Sadriji est une entreprise spécialisée zurichoise pour les travaux de peinture, de plâtrerie, de rénovation et de transformation. Nous associons le savoir-faire artisanal à une méthode de travail bien organisée et prenons en charge des mandats, d\'une seule pièce jusqu\'à une rénovation complète.',
       'stats.experience':            'Années d\'expérience',
       'stats.founded':               'Années d\'existence',
       'stats.employees':             'Collaborateurs',
       'usp.eyebrow':                 'Nos atouts',
       'usp.title':                   'Pourquoi Gebrüder Sadriji ?',
-      'usp.intro':                   'Ce qui nous distingue des autres entreprises – et pourquoi nos clients nous font confiance depuis des années.',
-      'usp.card1.title':             'Plus de 40 ans d\'expérience',
-      'usp.card1.text':              'Notre équipe cumule plus de 40 ans de savoir-faire en peinture et plâtrerie – pour trouver la solution optimale à chaque projet.',
+      'usp.intro':                   'Ce qui nous distingue des autres entreprises – et pourquoi les clients choisissent Gebrüder Sadriji.',
+      'usp.card1.title':             'Une équipe forte grâce à des compétences variées',
+      'usp.card1.text':              'La qualité naît lorsque les compétences sont utilisées de manière ciblée. Notre équipe réunit des spécialistes expérimentés aux atouts variés, dotés d\'un solide savoir-faire et d\'une grande maîtrise artisanale. Nous réalisons ainsi chaque projet de manière efficace, précise et à un niveau de qualité élevé.',
       'usp.card2.title':             'Qualité suisse',
       'usp.card2.text':              'Nous travaillons exclusivement avec des matériaux de haute qualité et selon les normes suisses – visible dans chaque coup de pinceau et chaque surface.',
-      'usp.card3.title':             'Fiable & dans les délais',
-      'usp.card3.text':              'Des accords clairs, une exécution ponctuelle et une communication transparente du premier contact jusqu\'à la livraison.',
-      'usp.card4.title':             'Service personnalisé',
-      'usp.card4.text':              'Une entreprise familiale avec un contact direct – pas de centre d\'appels, pas de transfert. Vous parlez toujours avec les personnes qui réalisent vos travaux.',
+      'usp.card3.title':             'Domaines d\'expertise variés',
+      'usp.card3.text':              'Nous couvrons différents travaux de peinture, de plâtrerie, de rénovation et de transformation – adaptés à chaque mandat.',
+      'usp.card4.title':             'Vos demandes directement chez nous',
+      'usp.card4.text':              'Les demandes par téléphone et par écrit sont reçues personnellement et transmises en interne au spécialiste compétent.',
       'services.eyebrow':            'Ce que nous proposons',
       'services.title':              'Nos prestations',
       'services.intro':              'Des solutions individuelles pour des projets résidentiels, commerciaux et de transformation à Zurich et dans les environs.',
@@ -372,9 +378,10 @@
       'contact.whatsapp':            'Écrire via WhatsApp Business',
       'form.name':                   'Nom *',
       'form.name.placeholder':       'Votre nom complet',
-      'form.email':                  'E-mail *',
+      'form.email':                  'E-mail',
       'form.email.placeholder':      'votre@email.ch',
       'form.phone':                  'Téléphone',
+      'form.contactHint':            'Veuillez indiquer au moins une adresse e-mail ou un numéro de téléphone afin que nous puissions vous joindre.',
       'form.subject':                'Objet / prestation *',
       'form.subject.placeholder':    'p. ex. peinture intérieure, travaux d\'enduit …',
       'form.message':                'Message *',
@@ -399,14 +406,16 @@
       'form.visit':                  'Visite sur place souhaitée',
       'form.visit.yes':              'Oui',
       'form.visit.no':               'Non',
+      'form.visit.open':             'Encore ouvert',
       'form.select.placeholder':     'Veuillez choisir',
       'form.privacy':                'J\'ai lu la politique de confidentialité et j\'accepte le traitement de mes données pour répondre à ma demande. *',
       'form.privacy.link':           'Politique de confidentialité',
       'form.submit':                 'Envoyer la demande',
       'form.sending':                'Envoi en cours …',
-      'form.success':                'Merci ! Votre demande a été transmise avec succès. Nous vous contacterons rapidement.',
+      'form.success':                'Merci pour votre demande. Nous avons bien reçu vos informations et vous recontacterons dans les meilleurs délais.',
       'form.error.fields':           'Veuillez remplir correctement tous les champs obligatoires.',
-      'form.error.send':             'Envoi actuellement impossible. Veuillez nous contacter par téléphone au +41 78 255 88 25.',
+      'form.error.contact':          'Veuillez indiquer au moins une adresse e-mail ou un numéro de téléphone.',
+      'form.error.send':             'Votre demande n\'a malheureusement pas pu être envoyée. Veuillez réessayer ou nous contacter directement par téléphone au +41 78 255 88 25.',
       'form.mailOpened':             'Votre application de messagerie a été ouverte. Veuillez envoyer le message pour finaliser votre demande.',
       'footer.tagline':              'Peinture et plâtrerie<br><br>Gebr. Sadriji Gipserarbeiten, Inhaber Skender Sadriji<br>Altwiesenstrasse 199, 8051 Zürich, Schweiz · UID CHE-113.308.264',
       'footer.navTitle':             'Navigation',
@@ -419,7 +428,7 @@
       'floatingBtn.text':            'Appeler maintenant',
       'nav.menuOpen':                'Ouvrir le menu',
       'nav.menuClose':               'Fermer le menu',
-      'meta.description':            'Gebrüder Sadriji – Zurich : Travaux de peinture et de plâtrerie en qualité suisse. Plus de 40 ans d\'expérience. Demande gratuite ou contact téléphonique.',
+      'meta.description':            'Gebrüder Sadriji – Zurich : travaux de peinture, de plâtrerie, de rénovation, de transformation, de cloisons sèches et de maçonnerie en qualité suisse. Des professionnels qualifiés forts de décennies d\'expérience. Demandez une offre gratuite ou appelez-nous.',
       'form.email.subject':          'Nouvelle demande via le site web Gebrüder Sadriji',
     },
 
@@ -437,30 +446,30 @@
       'hero.cta.primary':            'Richiesta gratuita',
       'hero.cta.call':               'Chiama ora',
       'hero.card.label':             'La vostra azienda in sintesi',
-      'hero.card.fact1':             '19 anni di attività',
-      'hero.card.fact2':             'Oltre 40 anni di esperienza',
+      'hero.card.fact1':             'Attività dal 2006',
+      'hero.card.fact2':             'Professionisti qualificati con decenni di esperienza',
       'hero.card.fact3':             '8 collaboratori',
-      'trust.experience':            'Oltre 40 anni di esperienza',
+      'trust.experience':            'Decenni di esperienza',
       'trust.quality':               'Qualità svizzera',
       'trust.punctual':              'Puntuali & precisi',
       'trust.reachable':             'Raggiungibili 24h/24 per telefono',
       'about.eyebrow':               'Chi siamo',
-      'about.title':                 '19 anni come partner affidabile<br>a Zurigo',
-      'about.intro':                 'Gebrüder Sadriji è sinonimo di lavori di pittura e intonacatura di alta qualità a Zurigo. Con oltre 40 anni di esperienza nel team, realizziamo i progetti in modo accurato, efficiente e secondo gli standard svizzeri – dalla prima consulenza al collaudo finale.',
+      'about.title':                 'Il vostro partner affidabile per lavori di pittura e intonacatura a Zurigo',
+      'about.intro':                 'Gebrüder Sadriji è un\'azienda specializzata di Zurigo per lavori di pittura, intonacatura, ristrutturazione e trasformazione. Uniamo il know-how artigianale a un metodo di lavoro ben organizzato e seguiamo incarichi dal singolo locale fino alla ristrutturazione completa.',
       'stats.experience':            'Anni di esperienza',
       'stats.founded':               'Anni di attività',
       'stats.employees':             'Collaboratori',
       'usp.eyebrow':                 'I nostri punti di forza',
       'usp.title':                   'Perché Gebrüder Sadriji?',
-      'usp.intro':                   'Ciò che ci distingue dagli altri – e perché i clienti si affidano a noi da anni.',
-      'usp.card1.title':             'Oltre 40 anni di esperienza',
-      'usp.card1.text':              'Il nostro team apporta oltre 40 anni di competenza accumulata in pittura e intonacatura – per trovare la soluzione ottimale per ogni progetto.',
+      'usp.intro':                   'Ciò che ci distingue dagli altri – e perché i clienti scelgono Gebrüder Sadriji.',
+      'usp.card1.title':             'Un team forte grazie a competenze diverse',
+      'usp.card1.text':              'La qualità nasce quando le competenze vengono impiegate in modo mirato. Il nostro team riunisce professionisti esperti con punti di forza diversi, solide conoscenze tecniche e abilità artigianale. Così realizziamo ogni progetto in modo efficiente, preciso e a un elevato livello di qualità.',
       'usp.card2.title':             'Qualità svizzera',
       'usp.card2.text':              'Lavoriamo esclusivamente con materiali di alta qualità e secondo gli standard svizzeri – visibile in ogni pennellata e ogni superficie.',
-      'usp.card3.title':             'Affidabili & puntuali',
-      'usp.card3.text':              'Accordi chiari, esecuzione puntuale e comunicazione trasparente dal primo contatto alla consegna.',
-      'usp.card4.title':             'Servizio personale',
-      'usp.card4.text':              'Un\'azienda familiare con contatto diretto – nessun call center, nessun trasferimento. Parlerete sempre con le persone che eseguono il vostro lavoro.',
+      'usp.card3.title':             'Settori specialistici versatili',
+      'usp.card3.text':              'Copriamo diversi lavori di pittura, intonacatura, ristrutturazione e trasformazione – su misura per ogni incarico.',
+      'usp.card4.title':             'Richieste direttamente da noi',
+      'usp.card4.text':              'Le richieste telefoniche e scritte vengono ricevute personalmente e inoltrate internamente allo specialista competente.',
       'services.eyebrow':            'Cosa offriamo',
       'services.title':              'I nostri servizi',
       'services.intro':              'Soluzioni individuali per progetti residenziali, commerciali e di ristrutturazione a Zurigo e dintorni.',
@@ -509,9 +518,10 @@
       'contact.whatsapp':            'Scrivi via WhatsApp Business',
       'form.name':                   'Nome *',
       'form.name.placeholder':       'Il vostro nome completo',
-      'form.email':                  'E-mail *',
+      'form.email':                  'E-mail',
       'form.email.placeholder':      'vostro@email.ch',
       'form.phone':                  'Telefono',
+      'form.contactHint':            'Indicate almeno un indirizzo e-mail o un numero di telefono così da potervi contattare.',
       'form.subject':                'Oggetto / servizio *',
       'form.subject.placeholder':    'es. pittura interna, lavori di intonaco …',
       'form.message':                'Messaggio *',
@@ -536,14 +546,16 @@
       'form.visit':                  'Sopralluogo desiderato',
       'form.visit.yes':              'Sì',
       'form.visit.no':               'No',
+      'form.visit.open':             'Ancora da definire',
       'form.select.placeholder':     'Si prega di scegliere',
       'form.privacy':                'Ho letto l\'informativa sulla privacy e acconsento al trattamento dei miei dati per rispondere alla mia richiesta. *',
       'form.privacy.link':           'Informativa sulla privacy',
       'form.submit':                 'Invia richiesta',
       'form.sending':                'Invio in corso …',
-      'form.success':                'Grazie! La vostra richiesta è stata inviata con successo. Vi contatteremo a breve.',
+      'form.success':                'Grazie per la vostra richiesta. Abbiamo ricevuto i vostri dati e vi contatteremo il prima possibile.',
       'form.error.fields':           'Si prega di compilare correttamente tutti i campi obbligatori.',
-      'form.error.send':             'Invio attualmente non disponibile. Contattateci telefonicamente al +41 78 255 88 25.',
+      'form.error.contact':          'Indicate almeno un indirizzo e-mail o un numero di telefono.',
+      'form.error.send':             'Purtroppo non è stato possibile inviare la richiesta. Riprovate o contattateci direttamente per telefono al +41 78 255 88 25.',
       'form.mailOpened':             'La vostra applicazione di posta è stata aperta. Si prega di inviare il messaggio per completare la richiesta.',
       'footer.tagline':              'Pittura e intonacatura<br><br>Gebr. Sadriji Gipserarbeiten, Inhaber Skender Sadriji<br>Altwiesenstrasse 199, 8051 Zürich, Schweiz · UID CHE-113.308.264',
       'footer.navTitle':             'Navigazione',
@@ -556,7 +568,7 @@
       'floatingBtn.text':            'Chiama ora',
       'nav.menuOpen':                'Apri menu',
       'nav.menuClose':               'Chiudi menu',
-      'meta.description':            'Gebrüder Sadriji – Zurigo: Lavori di pittura e stucco in qualità svizzera. Oltre 40 anni di esperienza. Richiesta gratuita o contatto telefonico.',
+      'meta.description':            'Gebrüder Sadriji – Zurigo: lavori di pittura, intonacatura, ristrutturazione, trasformazione, cartongesso e muratura in qualità svizzera. Professionisti qualificati con decenni di esperienza. Richiedete un\'offerta gratuita o chiamateci.',
       'form.email.subject':          'Nuova richiesta tramite il sito web Gebrüder Sadriji',
     },
   };
@@ -866,6 +878,8 @@
 
   if (form && feedback) {
     const requiredFields       = Array.from(form.querySelectorAll('[required]'));
+    const emailField           = form.querySelector('#email');
+    const phoneField           = form.querySelector('#telefon');
     const submitButton         = form.querySelector('button[type="submit"]');
     const submitButtonLabel    = submitButton?.querySelector('.btn-label');
 
@@ -902,6 +916,23 @@
       });
     });
 
+    // E-Mail/Telefon: Invalid-Markierung beim Tippen zurücksetzen
+    if (emailField) {
+      emailField.addEventListener('input', () => {
+        const hasValue = emailField.value.trim() !== '';
+        if (!hasValue || emailField.checkValidity()) clearInvalidState(emailField);
+        if (phoneField && phoneField.value.trim() !== '') clearInvalidState(phoneField);
+      });
+    }
+    if (phoneField) {
+      phoneField.addEventListener('input', () => {
+        if (phoneField.value.trim() !== '') {
+          clearInvalidState(phoneField);
+          if (emailField && emailField.value.trim() === '') clearInvalidState(emailField);
+        }
+      });
+    }
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
       setFeedback('');
@@ -912,8 +943,31 @@
         else clearInvalidState(field);
       });
 
+      // Mindestens E-Mail oder Telefon, und gültiges E-Mail-Format, falls angegeben
+      const emailValue = emailField ? emailField.value.trim() : '';
+      const phoneValue = phoneField ? phoneField.value.trim() : '';
+      let contactMissing = false;
+
+      if (!emailValue && !phoneValue) {
+        formIsValid = false;
+        contactMissing = true;
+        if (emailField) setInvalidState(emailField);
+        if (phoneField) setInvalidState(phoneField);
+      } else {
+        if (emailField && emailValue) clearInvalidState(emailField);
+        if (phoneField && phoneValue) clearInvalidState(phoneField);
+        // E-Mail-Format nur prüfen, wenn eine E-Mail eingegeben wurde
+        if (emailField && emailValue && !emailField.checkValidity()) {
+          formIsValid = false;
+          setInvalidState(emailField);
+        }
+      }
+
       if (!formIsValid) {
-        setFeedback(t('form.error.fields', currentLang), 'error');
+        setFeedback(
+          contactMissing ? t('form.error.contact', currentLang) : t('form.error.fields', currentLang),
+          'error'
+        );
         const firstInvalid = form.querySelector('.is-invalid');
         if (firstInvalid) firstInvalid.focus();
         return;
