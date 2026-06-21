@@ -43,7 +43,7 @@
       'usp.title':                   'Warum Gebrüder Sadriji?',
       'usp.intro':                   'Was uns von anderen Betrieben unterscheidet – und warum Kunden auf Gebrüder Sadriji setzen.',
       'usp.card1.title':             'Ein starkes Team durch unterschiedliche Fachkompetenzen',
-      'usp.card1.text':              'Gute Arbeit entsteht nicht dadurch, dass alle dasselbe können, sondern dadurch, dass jeder seine Stärken am richtigen Ort einsetzt. In unserem Team bringen erfahrene Fachleute unterschiedliche Talente, Fachkenntnisse und handwerkliche Fähigkeiten zusammen. Dadurch können wir jedes Projekt gezielt, effizient und mit hoher Qualität umsetzen.',
+      'usp.card1.text':              'Qualität entsteht, wenn Kompetenzen gezielt eingesetzt werden. Unser Team vereint erfahrene Fachleute mit unterschiedlichen Stärken, fundiertem Fachwissen und handwerklichem Können. So realisieren wir jedes Projekt effizient, präzise und auf hohem Qualitätsniveau.',
       'usp.card2.title':             'Schweizer Qualität',
       'usp.card2.text':              'Wir arbeiten ausschliesslich mit hochwertigen Materialien und nach Schweizer Standards – sichtbar in jedem Pinselstrich und jeder Oberfläche.',
       'usp.card3.title':             'Vielseitige Fachbereiche',
