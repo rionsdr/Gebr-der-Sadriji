@@ -1037,6 +1037,27 @@ a { color: inherit; }
   padding: var(--space-5) 0;
   font-size: 0.85rem;
   color: rgba(200, 216, 232, 0.4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.footer-cookie-settings {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: rgba(200, 216, 232, 0.55);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer-cookie-settings:hover,
+.footer-cookie-settings:focus-visible {
+  color: #fff;
 }
 
 /* ================================================================

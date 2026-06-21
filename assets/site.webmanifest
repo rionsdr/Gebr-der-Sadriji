@@ -2,6 +2,8 @@
   "name": "Gebrüder Sadriji",
   "short_name": "Gebr. Sadriji",
   "description": "Maler- und Gipserarbeiten in Zürich – Schweizer Qualität.",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/assets/icons/icon-192.png",
