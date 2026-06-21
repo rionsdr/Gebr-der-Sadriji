@@ -23,12 +23,12 @@
       form_name: 'Offertanfrage'
     });
   };
-  window.trackPhoneClick = function (location, href = '') {
+  window.trackPhoneClick = function (clickLocation, href = '') {
     const value = String(href).replace(/^tel:/i, '');
     pushDataLayerEvent('phone_click', {
       link_type: 'phone',
       value,
-      location
+      location: clickLocation
     });
   };
   window.trackWhatsappClick = function () {
@@ -36,12 +36,12 @@
       link_type: 'whatsapp'
     });
   };
-  window.trackEmailClick = function (location, href = '') {
+  window.trackEmailClick = function (clickLocation, href = '') {
     const value = String(href).replace(/^mailto:/i, '');
     pushDataLayerEvent('email_click', {
       link_type: 'email',
       value,
-      location
+      location: clickLocation
     });
   };
 
