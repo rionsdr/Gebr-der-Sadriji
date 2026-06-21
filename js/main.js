@@ -7,6 +7,42 @@
   const prefersReducedMotion = () =>
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  function pushDataLayerEvent(eventName, data = {}) {
+    if (!eventName) return;
+    window.dataLayer = window.dataLayer || [];
+    const payload =
+      data && typeof data === 'object'
+        ? { event: eventName, ...data }
+        : { event: eventName };
+    window.dataLayer.push(payload);
+  }
+
+  window.pushDataLayerEvent = pushDataLayerEvent;
+  window.trackContactFormSubmit = function () {
+    pushDataLayerEvent('contact_form_submit', {
+      form_name: 'Offertanfrage'
+    });
+  };
+  window.trackPhoneClick = function (_location, href = '') {
+    const value = String(href).replace(/^tel:/i, '');
+    pushDataLayerEvent('phone_click', {
+      link_type: 'phone',
+      value
+    });
+  };
+  window.trackWhatsappClick = function () {
+    pushDataLayerEvent('whatsapp_click', {
+      link_type: 'whatsapp'
+    });
+  };
+  window.trackEmailClick = function (_location, href = '') {
+    const value = String(href).replace(/^mailto:/i, '');
+    pushDataLayerEvent('email_click', {
+      link_type: 'email',
+      value
+    });
+  };
+
   /* ================================================================
      I18N – ÜBERSETZUNGSSYSTEM
      Zentrale Texte für DE / EN / FR / IT
