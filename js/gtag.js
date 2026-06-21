@@ -292,6 +292,25 @@
   }
 
   /* ================================================================
+     CONSENT-EINSTELLUNGEN ERNEUT ÖFFNEN (z. B. Footer-Link)
+  ================================================================ */
+
+  /** Öffnet den Consent-Banner erneut, damit die Auswahl geändert werden kann */
+  window.gsOpenConsentSettings = function () {
+    createConsentBanner();
+  };
+
+  /** Klick-Delegation für „Cookie-Einstellungen"-Elemente */
+  function initConsentSettingsTrigger() {
+    document.addEventListener('click', function (event) {
+      var trigger = event.target.closest('[data-action="cookie-settings"]');
+      if (!trigger) return;
+      event.preventDefault();
+      window.gsOpenConsentSettings();
+    });
+  }
+
+  /* ================================================================
      INITIALISIERUNG
   ================================================================ */
 
@@ -312,15 +331,17 @@
       }
     }
 
-    // Link- und Sektions-Tracking
+    // Link-, Sektions- und Consent-Einstellungs-Tracking
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function () {
         initLinkTracking();
         initContactSectionTracking();
+        initConsentSettingsTrigger();
       });
     } else {
       initLinkTracking();
       initContactSectionTracking();
+      initConsentSettingsTrigger();
     }
   }
 
