@@ -1144,18 +1144,27 @@ a { color: inherit; }
    RESPONSIVE – DESKTOP (≥ 64rem / 1024px)
 ================================================================ */
 @media (min-width: 64rem) {
+  .header-inner {
+    display: flex;
+    align-items: center;
+  }
   .header-cta { display: inline-flex; }
   .main-nav {
-    width: 100%;
-    min-width: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    min-width: max-content;
     justify-content: center;
   }
   .main-nav ul {
     margin: 0;
+    flex-wrap: nowrap;
   }
   .lang-switcher-desktop {
     display: flex;
-    margin-left: var(--space-5);
+    margin-left: auto;
+    padding-left: var(--space-5);
     margin-right: var(--space-2);
     flex-shrink: 0;
   }
