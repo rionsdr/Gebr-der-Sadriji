@@ -17,11 +17,13 @@
      KONSTANTEN
   ================================================================ */
   var GTAG_ID = 'AW-18241166068';
+  var CONTACT_FORM_CONVERSION_TAG_ID = 'AW-18326281119';
 
-  // TODO: Conversion Labels aus Google Ads einsetzen, sobald verfügbar
-  var CONVERSION_LABEL_CONTACT_FORM = 'REPLACE_WITH_CONVERSION_LABEL';
+  var CONVERSION_LABEL_CONTACT_FORM = 'egzvCMiRltEcEJ-306JE';
   var CONVERSION_LABEL_PHONE        = 'REPLACE_WITH_PHONE_CONVERSION_LABEL';
   var CONVERSION_LABEL_WHATSAPP     = 'REPLACE_WITH_WHATSAPP_CONVERSION_LABEL';
+  var CONTACT_FORM_CONVERSION_VALUE = 1.0;
+  var CONTACT_FORM_CONVERSION_CURRENCY = 'CHF';
 
   var CONSENT_STORAGE_KEY = 'cookieConsent';
   var LEGACY_CONSENT_KEY  = 'gs_consent_v1';
@@ -126,9 +128,20 @@
   }
 
   /** Conversion-Tracking */
-  function trackConversion(sendTo) {
-    gtagSend('event', 'conversion', { send_to: sendTo });
+  function trackConversion(sendTo, params) {
+    var payload = { send_to: sendTo };
+    var details = params || {};
+    for (var key in details) {
+      if (Object.prototype.hasOwnProperty.call(details, key)) {
+        payload[key] = details[key];
+      }
+    }
+    gtagSend('event', 'conversion', payload);
   }
+
+  gtagSend('config', CONTACT_FORM_CONVERSION_TAG_ID);
+
+  var lastContactFormConversionAt = 0;
 
   /**
    * Kontaktsektion angesehen
@@ -152,8 +165,13 @@
       page_location: window.location.href,
       page_title:    document.title
     });
-    // TODO: Auskommentierung entfernen und Label ersetzen, sobald vorhanden
-    // trackConversion(GTAG_ID + '/' + CONVERSION_LABEL_CONTACT_FORM);
+    var now = Date.now();
+    if (now - lastContactFormConversionAt < 1000) return;
+    lastContactFormConversionAt = now;
+    trackConversion(CONTACT_FORM_CONVERSION_TAG_ID + '/' + CONVERSION_LABEL_CONTACT_FORM, {
+      value: CONTACT_FORM_CONVERSION_VALUE,
+      currency: CONTACT_FORM_CONVERSION_CURRENCY
+    });
   };
 
   /**
