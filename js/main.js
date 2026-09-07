@@ -18,11 +18,13 @@
   }
 
   window.pushDataLayerEvent = pushDataLayerEvent;
-  window.trackContactFormSubmit = function () {
-    pushDataLayerEvent('contact_form_submit', {
-      form_name: 'Offertanfrage'
-    });
-  };
+  if (typeof window.trackContactFormSubmit !== 'function') {
+    window.trackContactFormSubmit = function () {
+      pushDataLayerEvent('contact_form_submit', {
+        form_name: 'Offertanfrage'
+      });
+    };
+  }
   window.trackPhoneClick = function (clickLocation, href = '') {
     const value = String(href).replace(/^tel:/i, '');
     pushDataLayerEvent('phone_click', {
